@@ -124,7 +124,7 @@ export default function HomePage() {
 					<div className="flex items-center justify-between h-16">
 						{/* Logo */}
 						<div className="flex-shrink-0">
-							<h1 className="text-xl sm:text-2xl font-bold text-blue-600 font-serif">Corexis</h1>
+							<h1 className="text-xl sm:text-2xl font-bold text-gradient-corexis font-serif">Corexis</h1>
 						</div>
 
 						{/* Desktop Navigation Menu */}
@@ -139,8 +139,8 @@ export default function HomePage() {
 									<button
 										key={item.id}
 										onClick={() => scrollToSection(item.id)}
-										className={`px-3 py-2 text-sm font-medium transition-colors duration-200 hover:text-cyan-500 ${
-											activeSection === item.id ? "text-blue-600" : "text-gray-700"
+										className={`px-3 py-2 text-sm font-medium transition-colors duration-200 hover:text-[#E040FB] ${
+											activeSection === item.id ? "text-[#7B1FA2]" : "text-gray-700"
 										}`}
 									>
 										{item.label}
@@ -152,7 +152,7 @@ export default function HomePage() {
 						{/* Mobile menu button */}
 						<div className="md:hidden">
 							<button 
-								className="text-gray-700 hover:text-blue-600 p-2"
+								className="text-gray-700 hover:text-[#7B1FA2] p-2"
 								onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
 							>
 								<svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -182,8 +182,8 @@ export default function HomePage() {
 											scrollToSection(item.id)
 											setMobileMenuOpen(false)
 										}}
-										className={`block w-full text-left px-3 py-2 text-base font-medium transition-colors duration-200 hover:text-cyan-500 ${
-											activeSection === item.id ? "text-blue-600 bg-blue-50" : "text-gray-700"
+										className={`block w-full text-left px-3 py-2 text-base font-medium transition-colors duration-200 hover:text-[#E040FB] ${
+											activeSection === item.id ? "text-[#7B1FA2] bg-purple-50" : "text-gray-700"
 										}`}
 									>
 										{item.label}
@@ -198,21 +198,21 @@ export default function HomePage() {
 			{/* Hero Section */}
 			<section
 				id="hero"
-				className="pt-16 min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-white relative overflow-hidden"
+				className="pt-16 min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-50 via-pink-50 to-white relative overflow-hidden"
 			>
-				<div className="absolute inset-0 bg-[url('/abstract-geometric-pattern.png')] opacity-5"></div>
+				<div className="absolute inset-0 bg-gradient-corexis opacity-5"></div>
 				<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
 					<h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-4 sm:mb-6 font-serif leading-tight animate-fade-in">
 						İşbirliğini Güçlendiriyor,
 						<br />
-						<span className="text-blue-600">Başarıyı Yönlendiriyoruz</span>
+						<span className="text-gradient-corexis">Başarıyı Yönlendiriyoruz</span>
 					</h1>
 					<p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed px-4">
 						Yaptığımız her işte mükemmellik ve yenilikçiliğe bağlı olan özel ekibimizle tanışın.
 					</p>
 					<Button
 						onClick={() => scrollToSection("about")}
-						className="bg-blue-600 hover:bg-cyan-500 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+						className="bg-gradient-corexis-primary hover:bg-gradient-corexis-accent text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl border-0"
 					>
 						Bizi Tanıyın
 					</Button>
@@ -255,7 +255,7 @@ export default function HomePage() {
 					</div>
 
 					<div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-						<Card className="p-6 lg:p-8 border-l-4 border-l-blue-600 shadow-lg hover:shadow-xl transition-shadow duration-300">
+						<Card className="p-6 lg:p-8 border-l-4 border-l-[#7B1FA2] shadow-lg hover:shadow-xl transition-shadow duration-300">
 							<CardContent className="p-0">
 								<h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4 font-serif">Misyonumuz</h3>
 								<p className="text-gray-600 leading-relaxed text-sm sm:text-base">
@@ -264,7 +264,7 @@ export default function HomePage() {
 							</CardContent>
 						</Card>
 
-						<Card className="p-6 lg:p-8 border-l-4 border-l-cyan-500 shadow-lg hover:shadow-xl transition-shadow duration-300">
+						<Card className="p-6 lg:p-8 border-l-4 border-l-[#E040FB] shadow-lg hover:shadow-xl transition-shadow duration-300">
 							<CardContent className="p-0">
 								<h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4 font-serif">Hedeflerimiz</h3>
 								<p className="text-gray-600 leading-relaxed text-sm sm:text-base">
@@ -277,19 +277,19 @@ export default function HomePage() {
 					<div className="mt-12 lg:mt-16 text-center">
 						<div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-8">
 							<div className="text-center">
-								<div className="text-2xl sm:text-3xl font-bold text-blue-600 mb-2">15+</div>
+								<div className="text-2xl sm:text-3xl font-bold text-[#7B1FA2] mb-2">15+</div>
 								<div className="text-gray-600 text-sm sm:text-base">Yıllık Deneyim</div>
 							</div>
 							<div className="text-center">
-								<div className="text-2xl sm:text-3xl font-bold text-blue-600 mb-2">100+</div>
+								<div className="text-2xl sm:text-3xl font-bold text-[#9C27B0] mb-2">100+</div>
 								<div className="text-gray-600 text-sm sm:text-base">Tamamlanan Proje</div>
 							</div>
 							<div className="text-center">
-								<div className="text-2xl sm:text-3xl font-bold text-blue-600 mb-2">50+</div>
+								<div className="text-2xl sm:text-3xl font-bold text-[#E040FB] mb-2">50+</div>
 								<div className="text-gray-600 text-sm sm:text-base">Mutlu Müşteri</div>
 							</div>
 							<div className="text-center">
-								<div className="text-2xl sm:text-3xl font-bold text-blue-600 mb-2">24/7</div>
+								<div className="text-2xl sm:text-3xl font-bold text-[#F06292] mb-2">24/7</div>
 								<div className="text-gray-600 text-sm sm:text-base">Destek Mevcudiyeti</div>
 							</div>
 						</div>
@@ -298,7 +298,7 @@ export default function HomePage() {
 			</section>
 
 			{/* Team Section */}
-			<section id="team" className="py-12 sm:py-16 lg:py-20 bg-slate-50">
+			<section id="team" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-purple-50 to-pink-50">
 				<div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="text-center mb-12 sm:mb-16">
 						<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 font-serif">Ekibimiz</h2>
@@ -325,13 +325,13 @@ export default function HomePage() {
 									</div>
 
 									<div className="text-center">
-										<h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 font-serif group-hover:text-blue-600 transition-colors duration-300">
+										<h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 font-serif group-hover:text-[#7B1FA2] transition-colors duration-300">
 											{member.name}
 										</h3>
-										<p className="text-blue-600 font-medium mb-3 text-sm sm:text-base">{member.role}</p>
+										<p className="text-[#9C27B0] font-medium mb-3 text-sm sm:text-base">{member.role}</p>
 										<p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-3">{member.bio}</p>
 
-										<div className="flex items-center justify-center text-gray-500 hover:text-cyan-500 transition-colors duration-200">
+										<div className="flex items-center justify-center text-gray-500 hover:text-[#E040FB] transition-colors duration-200">
 											<Mail className="h-3 w-3 sm:h-4 sm:w-4 mr-2" />
 											<span className="text-xs sm:text-sm">{member.email}</span>
 										</div>
@@ -346,7 +346,7 @@ export default function HomePage() {
 						<Button
 							onClick={() => scrollToSection("contact")}
 							variant="outline"
-							className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300 px-6 py-2 text-sm sm:text-base"
+							className="border-[#7B1FA2] text-[#7B1FA2] hover:bg-[#7B1FA2] hover:text-white transition-all duration-300 px-6 py-2 text-sm sm:text-base"
 						>
 							İletişime Geçin
 						</Button>
@@ -379,7 +379,7 @@ export default function HomePage() {
 											className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
 										/>
 										<div className="absolute top-4 left-4">
-											<span className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-medium">
+											<span className="bg-gradient-corexis-primary text-white px-3 py-1 rounded-full text-xs font-medium">
 												{post.category}
 											</span>
 										</div>
@@ -387,7 +387,7 @@ export default function HomePage() {
 									</div>
 
 									<div className="p-4 sm:p-6">
-										<h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 font-serif group-hover:text-blue-600 transition-colors duration-300 line-clamp-2">
+										<h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 font-serif group-hover:text-[#7B1FA2] transition-colors duration-300 line-clamp-2">
 											{post.title}
 										</h3>
 										<p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-3">{post.excerpt}</p>
@@ -411,7 +411,7 @@ export default function HomePage() {
 
 										<div className="flex items-center justify-between">
 											<span className="text-xs sm:text-sm text-gray-600">By {post.author}</span>
-											<div className="flex items-center text-blue-600 group-hover:text-cyan-500 transition-colors duration-200">
+											<div className="flex items-center text-[#7B1FA2] group-hover:text-[#E040FB] transition-colors duration-200">
 												<span className="text-xs sm:text-sm font-medium mr-2">Read More</span>
 												<ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-200 group-hover:translate-x-1" />
 											</div>
@@ -426,7 +426,7 @@ export default function HomePage() {
 						<p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base px-4">En son görüşlerimizle güncel kalmak ister misiniz?</p>
 						<Button
 							onClick={() => scrollToSection("contact")}
-							className="bg-blue-600 hover:bg-cyan-500 text-white px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-lg font-medium transition-all duration-300"
+							className="bg-gradient-corexis hover:bg-gradient-corexis-accent text-white px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-lg font-medium transition-all duration-300 border-0"
 						>
 							Güncellemelere Abone Olun
 						</Button>
@@ -435,7 +435,7 @@ export default function HomePage() {
 			</section>
 
 			{/* Contact Section */}
-			<section id="contact" className="py-12 sm:py-16 lg:py-20 bg-slate-50">
+			<section id="contact" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-purple-50 to-pink-50">
 				<div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="text-center mb-12 sm:mb-16">
 						<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 font-serif">İletişime Geçin</h2>
@@ -457,8 +457,8 @@ export default function HomePage() {
 							{/* Contact Details */}
 							<div className="space-y-4 sm:space-y-6">
 								<div className="flex items-start space-x-4">
-									<div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-										<Mail className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600" />
+									<div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+										<Mail className="h-5 w-5 sm:h-6 sm:w-6 text-[#7B1FA2]" />
 									</div>
 									<div>
 										<h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-1">E-posta Gönderin</h4>
@@ -468,8 +468,8 @@ export default function HomePage() {
 								</div>
 
 								<div className="flex items-start space-x-4">
-									<div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-cyan-100 rounded-lg flex items-center justify-center">
-										<svg className="h-5 w-5 sm:h-6 sm:w-6 text-cyan-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									<div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-pink-100 rounded-lg flex items-center justify-center">
+										<svg className="h-5 w-5 sm:h-6 sm:w-6 text-[#E040FB]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 											<path
 												strokeLinecap="round"
 												strokeLinejoin="round"
@@ -486,8 +486,8 @@ export default function HomePage() {
 								</div>
 
 								<div className="flex items-start space-x-4">
-									<div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-green-100 rounded-lg flex items-center justify-center">
-										<svg className="h-5 w-5 sm:h-6 sm:w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									<div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+										<svg className="h-5 w-5 sm:h-6 sm:w-6 text-[#9C27B0]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 											<path
 												strokeLinecap="round"
 												strokeLinejoin="round"
@@ -517,19 +517,19 @@ export default function HomePage() {
 								<div className="flex space-x-4">
 									<a
 										href="#"
-										className="w-10 h-10 bg-blue-600 text-white rounded-lg flex items-center justify-center hover:bg-cyan-500 transition-colors duration-200"
+										className="w-10 h-10 bg-gradient-corexis-primary text-white rounded-lg flex items-center justify-center hover:bg-gradient-corexis-accent transition-all duration-200"
 									>
 										<Twitter className="h-5 w-5" />
 									</a>
 									<a
 										href="#"
-										className="w-10 h-10 bg-blue-600 text-white rounded-lg flex items-center justify-center hover:bg-cyan-500 transition-colors duration-200"
+										className="w-10 h-10 bg-gradient-corexis-primary text-white rounded-lg flex items-center justify-center hover:bg-gradient-corexis-accent transition-all duration-200"
 									>
 										<Linkedin className="h-5 w-5" />
 									</a>
 									<a
 										href="#"
-										className="w-10 h-10 bg-blue-600 text-white rounded-lg flex items-center justify-center hover:bg-cyan-500 transition-colors duration-200"
+										className="w-10 h-10 bg-gradient-corexis-primary text-white rounded-lg flex items-center justify-center hover:bg-gradient-corexis-accent transition-all duration-200"
 									>
 										<svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
 											<path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.097.118.112.221.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.017z" />
@@ -604,7 +604,7 @@ function ContactForm() {
 						required
 						value={formData.name}
 						onChange={handleInputChange}
-						className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+						className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7B1FA2] focus:border-transparent transition-colors duration-200"
 						placeholder="Adınız ve soyadınız"
 					/>
 				</div>
@@ -619,7 +619,7 @@ function ContactForm() {
 						required
 						value={formData.email}
 						onChange={handleInputChange}
-						className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+						className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7B1FA2] focus:border-transparent transition-colors duration-200"
 						placeholder="email@ornek.com"
 					/>
 				</div>
@@ -636,7 +636,7 @@ function ContactForm() {
 					required
 					value={formData.subject}
 					onChange={handleInputChange}
-					className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+					className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7B1FA2] focus:border-transparent transition-colors duration-200"
 				>
 					<option value="">Bir konu seçin</option>
 					<option value="general">Genel Sorgu</option>
@@ -660,7 +660,7 @@ function ContactForm() {
 					rows={5}
 					value={formData.message}
 					onChange={handleInputChange}
-					className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 resize-vertical"
+					className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7B1FA2] focus:border-transparent transition-colors duration-200 resize-vertical"
 					placeholder="Projeniz, sorularınız veya size nasıl yardımcı olabileceğimiz hakkında bize anlatın..."
 				/>
 			</div>
@@ -670,7 +670,7 @@ function ContactForm() {
 				<Button
 					type="submit"
 					disabled={isSubmitting}
-					className="w-full bg-blue-600 hover:bg-cyan-500 text-white py-2 sm:py-3 text-sm sm:text-lg font-medium transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+					className="w-full bg-gradient-corexis hover:bg-gradient-corexis-accent text-white py-2 sm:py-3 text-sm sm:text-lg font-medium transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed border-0"
 				>
 					{isSubmitting ? (
 						<div className="flex items-center justify-center">
