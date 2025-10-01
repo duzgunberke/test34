@@ -5,19 +5,17 @@ import type React from "react"
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Mail, Calendar, Clock, ArrowRight, Twitter, Linkedin, Star, Zap, Target, Users, Award, TrendingUp, CheckCircle } from "lucide-react"
+import { Mail, Calendar, Clock, ArrowRight, Twitter, Linkedin } from "lucide-react"
 import { useRouter } from "next/navigation"
 
 // Team data
 const teamMembers = [
-	{
+  	{
 		id: "berkay-duzgun",
 		name: "Berkay Düzgün",
 		role: "CEO",
 		bio: "Ölçeklenebilir mimari ve yeni teknolojiler konusunda uzmanlaşan teknoloji eksperi. Teknik yeniliklerimizi ileriye taşıyor.",
 		image: "/berkay.jpeg",
-		skills: ["Liderlik", "Strateji", "Teknoloji"],
-		experience: "8+ yıl"
 	},
 	{
 		id: "berke-duzgun",
@@ -25,18 +23,15 @@ const teamMembers = [
 		role: "Danışman",
 		bio: "Stratejik planlama ve iş geliştirme alanında 10+ yıllık deneyime sahip vizyoner lider. Yenilikçi çözümler oluşturma konusunda tutkulu.",
 		image: "/berke.jpeg",
-		skills: ["Danışmanlık", "İş Geliştirme", "Planlama"],
-		experience: "10+ yıl"
 	},
-	{
+  	{
 		id: "berke-duzgun-2",
 		name: "Berke Düzgün",
 		role: "Danışman",
 		bio: "Stratejik planlama ve iş geliştirme alanında 10+ yıllık deneyime sahip vizyoner lider. Yenilikçi çözümler oluşturma konusunda tutkulu.",
 		image: "/berke.jpeg",
-		skills: ["Danışmanlık", "İş Geliştirme", "Planlama"],
-		experience: "10+ yıl"
 	},
+
 ]
 
 // Blog posts data for the updates section
@@ -51,7 +46,6 @@ const blogPosts = [
 		date: "2024-02-10",
 		readTime: "6 dk okuma",
 		category: "Teknoloji",
-		featured: true
 	},
 	{
 		id: "modern-web-gelistirme",
@@ -63,7 +57,6 @@ const blogPosts = [
 		date: "2024-02-05",
 		readTime: "8 dk okuma",
 		category: "Yazılım Geliştirme",
-		featured: false
 	},
 	{
 		id: "dijital-donusum-stratejileri",
@@ -75,43 +68,15 @@ const blogPosts = [
 		date: "2024-01-28",
 		readTime: "7 dk okuma",
 		category: "İş Stratejisi",
-		featured: false
 	},
-]
-
-// Features data
-const features = [
-	{
-		icon: <Zap className="h-8 w-8" />,
-		title: "Hızlı Çözümler",
-		description: "Hızlı ve etkili çözümlerle işlerinizi kolaylaştırıyoruz"
-	},
-	{
-		icon: <Target className="h-8 w-8" />,
-		title: "Hedef Odaklı",
-		description: "Her projede net hedefler belirliyoruz ve sonuç odaklı çalışıyoruz"
-	},
-	{
-		icon: <Users className="h-8 w-8" />,
-		title: "Ekip Çalışması",
-		description: "Güçlü ekip ruhuyla birlikte hareket ediyoruz"
-	},
-	{
-		icon: <Award className="h-8 w-8" />,
-		title: "Kalite Garantisi",
-		description: "Her projede en yüksek kalite standartlarını uygulıyoruz"
-	}
 ]
 
 export default function HomePage() {
 	const [activeSection, setActiveSection] = useState("hero")
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-	const [isVisible, setIsVisible] = useState(false)
 	const router = useRouter()
 
 	useEffect(() => {
-		setIsVisible(true)
-		
 		const handleScroll = () => {
 			const sections = ["hero", "about", "team", "updates", "contact"]
 			const scrollPosition = window.scrollY + 100
@@ -143,26 +108,25 @@ export default function HomePage() {
 		router.push(`/team/${memberId}`)
 	}
 
+	// Function to handle blog post clicks
 	const handleBlogClick = (postId: string) => {
 		router.push(`/blog/${postId}`)
 	}
 
 	return (
-		<div className="min-h-screen bg-white font-sans overflow-x-hidden">
-			{/* Fixed Navigation with enhanced design */}
-			<nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-gray-100 shadow-sm">
+		<div className="min-h-screen bg-white font-sans">
+			{/* Fixed Navigation */}
+			<nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="flex items-center justify-between h-16">
-						{/* Logo with enhanced styling */}
+						{/* Logo */}
 						<div className="flex-shrink-0">
-							<h1 className="text-xl sm:text-2xl font-bold text-gradient-corexis font-serif tracking-tight">
-								Corexis
-							</h1>
+							<h1 className="text-xl sm:text-2xl font-bold text-gradient-corexis font-serif">Corexis</h1>
 						</div>
 
-						{/* Desktop Navigation Menu with enhanced styling */}
+						{/* Desktop Navigation Menu */}
 						<div className="hidden md:block">
-							<div className="ml-10 flex items-baseline space-x-1">
+							<div className="ml-10 flex items-baseline space-x-4 lg:space-x-8">
 								{[
 									{ id: "about", label: "Hakkımızda" },
 									{ id: "team", label: "Ekibimiz" },
@@ -172,10 +136,8 @@ export default function HomePage() {
 									<button
 										key={item.id}
 										onClick={() => scrollToSection(item.id)}
-										className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-purple-50 hover:text-[#7B1FA2] ${
-											activeSection === item.id 
-												? "text-[#7B1FA2] bg-purple-50" 
-												: "text-gray-700"
+										className={`px-3 py-2 text-sm font-medium transition-colors duration-200 hover:text-[#E040FB] ${
+											activeSection === item.id ? "text-[#7B1FA2]" : "text-gray-700"
 										}`}
 									>
 										{item.label}
@@ -187,7 +149,7 @@ export default function HomePage() {
 						{/* Mobile menu button */}
 						<div className="md:hidden">
 							<button 
-								className="text-gray-700 hover:text-[#7B1FA2] p-2 rounded-lg transition-colors duration-200"
+								className="text-gray-700 hover:text-[#7B1FA2] p-2"
 								onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
 							>
 								<svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -201,10 +163,10 @@ export default function HomePage() {
 						</div>
 					</div>
 
-					{/* Enhanced Mobile Navigation Menu */}
+					{/* Mobile Navigation Menu */}
 					{mobileMenuOpen && (
-						<div className="md:hidden animate-in slide-in-from-top duration-300">
-							<div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-100 rounded-b-xl shadow-lg">
+						<div className="md:hidden">
+							<div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
 								{[
 									{ id: "about", label: "Hakkımızda" },
 									{ id: "team", label: "Ekibimiz" },
@@ -217,7 +179,7 @@ export default function HomePage() {
 											scrollToSection(item.id)
 											setMobileMenuOpen(false)
 										}}
-										className={`block w-full text-left px-3 py-3 rounded-lg text-base font-medium transition-all duration-200 hover:bg-purple-50 hover:text-[#7B1FA2] ${
+										className={`block w-full text-left px-3 py-2 text-base font-medium transition-colors duration-200 hover:text-[#E040FB] ${
 											activeSection === item.id ? "text-[#7B1FA2] bg-purple-50" : "text-gray-700"
 										}`}
 									>
@@ -230,307 +192,154 @@ export default function HomePage() {
 				</div>
 			</nav>
 
-			{/* Enhanced Hero Section */}
+			{/* Hero Section */}
 			<section
 				id="hero"
-				className="pt-16 min-h-screen flex items-center justify-center relative overflow-hidden"
+				className="pt-16 min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-50 via-pink-50 to-white relative overflow-hidden"
 			>
-				{/* Animated background */}
-				<div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-pink-50 to-white">
-					<div className="absolute inset-0 bg-gradient-corexis opacity-5"></div>
-					{/* Floating shapes */}
-					<div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-purple-200 to-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-					<div className="absolute top-40 right-10 w-32 h-32 bg-gradient-to-r from-pink-200 to-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-					<div className="absolute bottom-20 left-20 w-32 h-32 bg-gradient-to-r from-purple-200 to-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-				</div>
-				
-				<div className={`max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-					<div className="mb-6">
-						<span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-purple-100 to-pink-100 text-[#7B1FA2] border border-purple-200">
-							<Star className="h-4 w-4 mr-2" />
-							Yenilikçi Çözümler
-						</span>
-					</div>
-					
-					<h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 font-serif leading-tight">
-						İşbirliğini <span className="text-gradient-corexis">Güçlendiriyor</span>,
+				<div className="absolute inset-0 bg-gradient-corexis opacity-5"></div>
+				<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+					<h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-4 sm:mb-6 font-serif leading-tight animate-fade-in">
+						İşbirliğini Güçlendiriyor,
 						<br />
-						<span className="text-gradient-corexis">Başarıyı</span> Yönlendiriyoruz
+						<span className="text-gradient-corexis">Başarıyı Yönlendiriyoruz</span>
 					</h1>
-					
-					<p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-						Yaptığımız her işte mükemmellik ve yenilikçiliğe bağlı olan özel ekibimizle, 
-						<span className="font-semibold text-[#7B1FA2]"> geleceğin çözümlerini </span>
-						bugün hayata geçiriyoruz.
+					<p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed px-4">
+						Yaptığımız her işte mükemmellik ve yenilikçiliğe bağlı olan özel ekibimizle tanışın.
 					</p>
-					
-					<div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-						<Button
-							onClick={() => scrollToSection("about")}
-							className="bg-gradient-corexis hover:scale-105 text-white px-8 py-4 text-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl border-0 rounded-xl"
-						>
-							<Zap className="h-5 w-5 mr-2" />
-							Bizi Tanıyın
-						</Button>
-						<Button
-							onClick={() => scrollToSection("contact")}
-							variant="outline"
-							className="border-2 border-[#7B1FA2] text-[#7B1FA2] hover:bg-[#7B1FA2] hover:text-white px-8 py-4 text-lg font-medium transition-all duration-300 rounded-xl"
-						>
-							İletişime Geçin
-							<ArrowRight className="h-5 w-5 ml-2" />
-						</Button>
-					</div>
-
-					{/* Feature highlights */}
-					<div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-4xl mx-auto">
-						{features.map((feature, index) => (
-							<div 
-								key={index}
-								className={`text-center transition-all duration-700 delay-${index * 200} ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
-							>
-								<div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-r from-purple-100 to-pink-100 text-[#7B1FA2] mb-3">
-									{feature.icon}
-								</div>
-								<h3 className="font-semibold text-gray-900 text-sm md:text-base mb-1">{feature.title}</h3>
-								<p className="text-gray-600 text-xs md:text-sm">{feature.description}</p>
-							</div>
-						))}
-					</div>
+					<Button
+						onClick={() => scrollToSection("about")}
+						className="bg-gradient-corexis-primary hover:bg-gradient-corexis-accent text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl border-0"
+					>
+						Bizi Tanıyın
+					</Button>
 				</div>
 			</section>
 
-			{/* Enhanced About Us Section */}
-			<section id="about" className="py-16 lg:py-24 bg-white relative">
-				{/* Background decoration */}
-				<div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-l from-purple-50 to-transparent rounded-full -translate-y-48 translate-x-48 opacity-60"></div>
-				
-				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-					<div className="text-center mb-16">
-						<div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-purple-100 to-pink-100 text-[#7B1FA2] border border-purple-200 mb-6">
-							<Users className="h-4 w-4 mr-2" />
-							Hakkımızda
-						</div>
-						<h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 font-serif">
-							Kimiz ve Neler <span className="text-gradient-corexis">Yapıyoruz</span>
-						</h2>
-						<p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-							İşbirliği, yenilikçilik ve mükemmelliğe olan sarsılmaz bağlılığımız aracılığıyla 
-							olağanüstü sonuçlar sunmaya adanmış dinamik bir profesyoneller ekibiyiz.
+			{/* About Us Section */}
+			<section id="about" className="py-12 sm:py-16 lg:py-20 bg-white">
+				<div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+					<div className="text-center mb-12 sm:mb-16">
+						<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 font-serif">Hakkımızda</h2>
+						<p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
+							İşbirliği, yenilikçilik ve mükemmelliğe olan sarsılmaz bağlılığımız aracılığıyla olağanüstü sonuçlar sunmaya adanmış dinamik bir profesyoneller ekibiyiz.
 						</p>
 					</div>
 
-					{/* Enhanced grid layout */}
-					<div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
-						<div className="relative">
-							<div className="absolute -top-4 -left-4 w-full h-full bg-gradient-to-br from-purple-200 to-pink-200 rounded-2xl opacity-20"></div>
+					<div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center mb-12 lg:mb-16">
+						<div className="order-2 md:order-1">
 							<img
 								src="/professional-team-collaboration.png"
 								alt="Our team collaborating"
-								className="relative rounded-2xl shadow-2xl w-full h-auto transform hover:scale-105 transition-transform duration-500"
+								className="rounded-lg shadow-lg w-full h-auto"
 							/>
 						</div>
-						
-						<div className="space-y-8">
-							<div className="group">
-								<div className="flex items-center mb-4">
-									<div className="w-12 h-12 bg-gradient-corexis rounded-xl flex items-center justify-center mr-4">
-										<TrendingUp className="h-6 w-6 text-white" />
-									</div>
-									<h3 className="text-2xl font-bold text-gray-900 font-serif group-hover:text-[#7B1FA2] transition-colors duration-300">
-										Hikayemiz
-									</h3>
-								</div>
-								<p className="text-gray-600 leading-relaxed text-lg">
-									Ekiplerin nasıl işbirliği yaptığını ve hedeflerine nasıl ulaştığını dönüştürme vizyonuyla kurulmuş olan şirketimiz, 
-									yenilikçi çözümler ve olağanüstü hizmet sunumu arayan organizasyonlar için güvenilir bir partner haline gelmiştir.
+						<div className="space-y-6 order-1 md:order-2">
+							<div>
+								<h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-3 font-serif">Hikayemiz</h3>
+								<p className="text-gray-600 leading-relaxed text-sm sm:text-base">
+									Ekiplerin nasıl işbirliği yaptığını ve hedeflerine nasıl ulaştığını dönüştürme vizyonuyla kurulmuş olan şirketimiz, yenilikçi çözümler ve olağanüstü hizmet sunumu arayan organizasyonlar için güvenilir bir partner haline gelmiştir.
 								</p>
 							</div>
-							
-							<div className="group">
-								<div className="flex items-center mb-4">
-									<div className="w-12 h-12 bg-gradient-corexis-accent rounded-xl flex items-center justify-center mr-4">
-										<Award className="h-6 w-6 text-white" />
-									</div>
-									<h3 className="text-2xl font-bold text-gray-900 font-serif group-hover:text-[#7B1FA2] transition-colors duration-300">
-										Deneyimimiz
-									</h3>
-								</div>
-								<p className="text-gray-600 leading-relaxed text-lg">
-									Farklı sektörlerde <span className="font-bold text-[#7B1FA2]">15 yılı</span> aşan birleşik deneyimimizle, 
-									ekibimiz üstlendiğimiz her projeye derin uzmanlık ve yeni perspektifler getiriyor.
+							<div>
+								<h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-3 font-serif">Önemli Olan Deneyim</h3>
+								<p className="text-gray-600 leading-relaxed text-sm sm:text-base">
+									Farklı sektörlerde{" "}
+									<span className="font-semibold text-blue-600">15 yılı</span> aşan birleşik deneyimimizle, ekibimiz üstlendiğimiz her projeye derin uzmanlık ve yeni perspektifler getiriyor.
 								</p>
-								
-								{/* Progress indicators */}
-								<div className="mt-6 space-y-3">
-									{[
-										{ label: "Müşteri Memnuniyeti", percentage: 98 },
-										{ label: "Proje Başarı Oranı", percentage: 95 },
-										{ label: "Yeniden Çalışma Oranı", percentage: 87 }
-									].map((item, index) => (
-										<div key={index} className="space-y-2">
-											<div className="flex justify-between text-sm">
-												<span className="font-medium text-gray-700">{item.label}</span>
-												<span className="text-[#7B1FA2] font-bold">{item.percentage}%</span>
-											</div>
-											<div className="w-full bg-gray-200 rounded-full h-2">
-												<div 
-													className="bg-gradient-corexis h-2 rounded-full transition-all duration-1000 ease-out"
-													style={{ width: `${item.percentage}%` }}
-												></div>
-											</div>
-										</div>
-									))}
-								</div>
 							</div>
 						</div>
 					</div>
 
-					{/* Enhanced mission and vision cards */}
-					<div className="grid md:grid-cols-2 gap-8 mb-16">
-						<Card className="group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-							<div className="absolute top-0 left-0 w-full h-1 bg-gradient-corexis"></div>
-							<CardContent className="p-8">
-								<div className="flex items-center mb-6">
-									<div className="w-12 h-12 bg-gradient-corexis rounded-xl flex items-center justify-center mr-4">
-										<Target className="h-6 w-6 text-white" />
-									</div>
-									<h3 className="text-2xl font-bold text-gray-900 font-serif">Misyonumuz</h3>
-								</div>
-								<p className="text-gray-600 leading-relaxed text-lg">
-									Yenilikçi çözümler sunarak, işbirliğini teşvik ederek ve sürdürülebilir büyüme ve başarıyı 
-									yönlendiren olağanüstü sonuçlar sunarak ekipleri ve organizasyonları güçlendirmek.
+					<div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+						<Card className="p-6 lg:p-8 border-l-4 border-l-[#7B1FA2] shadow-lg hover:shadow-xl transition-shadow duration-300">
+							<CardContent className="p-0">
+								<h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4 font-serif">Misyonumuz</h3>
+								<p className="text-gray-600 leading-relaxed text-sm sm:text-base">
+									Yenilikçi çözümler sunarak, işbirliğini teşvik ederek ve sürdürülebilir büyüme ve başarıyı yönlendiren olağanüstü sonuçlar sunarak ekipleri ve organizasyonları güçlendirmek.
 								</p>
 							</CardContent>
 						</Card>
 
-						<Card className="group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-							<div className="absolute top-0 left-0 w-full h-1 bg-gradient-corexis-accent"></div>
-							<CardContent className="p-8">
-								<div className="flex items-center mb-6">
-									<div className="w-12 h-12 bg-gradient-corexis-accent rounded-xl flex items-center justify-center mr-4">
-										<Zap className="h-6 w-6 text-white" />
-									</div>
-									<h3 className="text-2xl font-bold text-gray-900 font-serif">Hedeflerimiz</h3>
-								</div>
-								<p className="text-gray-600 leading-relaxed text-lg">
-									Yaptığımız her işte kalite, dürüstlük ve müşteri memnuniyetine olan bağlılığımızı korurken 
-									sürekli yenilik yapmak, uzmanlığımızı genişletmek ve kalıcı ortaklıklar kurmak.
+						<Card className="p-6 lg:p-8 border-l-4 border-l-[#E040FB] shadow-lg hover:shadow-xl transition-shadow duration-300">
+							<CardContent className="p-0">
+								<h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4 font-serif">Hedeflerimiz</h3>
+								<p className="text-gray-600 leading-relaxed text-sm sm:text-base">
+									Yaptığımız her işte kalite, dürüstlük ve müşteri memnuniyetine olan bağlılığımızı korurken sürekli yenilik yapmak, uzmanlığımızı genişletmek ve kalıcı ortaklıklar kurmak.
 								</p>
 							</CardContent>
 						</Card>
 					</div>
 
-					{/* Enhanced statistics */}
-					<div className="text-center">
-						<h3 className="text-3xl font-bold text-gray-900 mb-12 font-serif">Rakamlarla Başarımız</h3>
-						<div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-							{[
-								{ number: "15+", label: "Yıllık Deneyim", color: "#7B1FA2" },
-								{ number: "100+", label: "Tamamlanan Proje", color: "#9C27B0" },
-								{ number: "50+", label: "Mutlu Müşteri", color: "#E040FB" },
-								{ number: "24/7", label: "Destek Hizmeti", color: "#F06292" }
-							].map((stat, index) => (
-								<div key={index} className="group text-center transform hover:scale-105 transition-all duration-300">
-									<div className="w-20 h-20 mx-auto mb-4 rounded-2xl flex items-center justify-center bg-gradient-to-br from-purple-100 to-pink-100 group-hover:shadow-lg transition-all duration-300">
-										<div className="text-3xl font-bold" style={{ color: stat.color }}>
-											{stat.number}
-										</div>
-									</div>
-									<div className="text-gray-600 font-medium">{stat.label}</div>
-								</div>
-							))}
+					<div className="mt-12 lg:mt-16 text-center">
+						<div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-8">
+							<div className="text-center">
+								<div className="text-2xl sm:text-3xl font-bold text-[#7B1FA2] mb-2">15+</div>
+								<div className="text-gray-600 text-sm sm:text-base">Yıllık Deneyim</div>
+							</div>
+							<div className="text-center">
+								<div className="text-2xl sm:text-3xl font-bold text-[#9C27B0] mb-2">100+</div>
+								<div className="text-gray-600 text-sm sm:text-base">Tamamlanan Proje</div>
+							</div>
+							<div className="text-center">
+								<div className="text-2xl sm:text-3xl font-bold text-[#E040FB] mb-2">50+</div>
+								<div className="text-gray-600 text-sm sm:text-base">Mutlu Müşteri</div>
+							</div>
+							<div className="text-center">
+								<div className="text-2xl sm:text-3xl font-bold text-[#F06292] mb-2">24/7</div>
+								<div className="text-gray-600 text-sm sm:text-base">Destek Mevcudiyeti</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</section>
 
-			{/* Enhanced Team Section */}
-			<section id="team" className="py-16 lg:py-24 bg-gradient-to-br from-purple-50 via-pink-50 to-white relative overflow-hidden">
-				{/* Background decoration */}
-				<div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-r from-purple-100 to-transparent rounded-full -translate-x-48 translate-y-48 opacity-60"></div>
-				
-				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-					<div className="text-center mb-16">
-						<div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-white/80 text-[#7B1FA2] border border-purple-200 mb-6 backdrop-blur-sm">
-							<Users className="h-4 w-4 mr-2" />
-							Takımımız
-						</div>
-						<h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 font-serif">
-							<span className="text-gradient-corexis">Yetenekli</span> Ekibimiz
-						</h2>
-						<p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-							Başarımızı yönlendiren yetenekli bireylerle tanışın. Her üye, olağanüstü sonuçlar sunmak için 
-							benzersiz uzmanlık ve tutku getiriyor.
+			{/* Team Section */}
+			<section id="team" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-purple-50 to-pink-50">
+				<div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+					<div className="text-center mb-12 sm:mb-16">
+						<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 font-serif">Ekibimiz</h2>
+						<p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
+							Başarımızı yönlendiren yetenekli bireylerle tanışın. Her üye, olağanüstü sonuçlar sunmak için benzersiz uzmanlık ve tutku getiriyor.
 						</p>
 					</div>
 
-					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-						{teamMembers.map((member, index) => (
+					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+						{teamMembers.map((member) => (
 							<Card
 								key={member.id}
-								className="group cursor-pointer transition-all duration-500 hover:shadow-2xl hover:-translate-y-4 bg-white/80 backdrop-blur-sm border-0 shadow-lg overflow-hidden"
+								className="group cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-2 bg-white border-0 shadow-lg"
 								onClick={() => handleMemberClick(member.id)}
 							>
-								<CardContent className="p-0">
-									<div className="relative overflow-hidden">
-										<div className="aspect-square relative">
-											<img
-												src={member.image || "/placeholder.svg"}
-												alt={member.name}
-												className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-											/>
-											<div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-											
-											{/* Floating skills tags */}
-											<div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-												<div className="flex flex-wrap gap-2">
-													{member.skills.map((skill, skillIndex) => (
-														<span key={skillIndex} className="px-3 py-1 bg-white/90 text-[#7B1FA2] text-xs font-medium rounded-full backdrop-blur-sm">
-															{skill}
-														</span>
-													))}
-												</div>
-											</div>
-										</div>
+								<CardContent className="p-4 sm:p-6">
+									<div className="aspect-square relative overflow-hidden rounded-full mx-auto mb-4 sm:mb-6 w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48">
+										<img
+											src={member.image || "/placeholder.svg"}
+											alt={member.name}
+											className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+										/>
+										<div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full" />
 									</div>
 
-									<div className="p-6">
-										<div className="flex items-center justify-between mb-3">
-											<h3 className="text-xl font-bold text-gray-900 font-serif group-hover:text-[#7B1FA2] transition-colors duration-300">
-												{member.name}
-											</h3>
-											<span className="text-sm font-medium text-[#9C27B0] bg-purple-100 px-3 py-1 rounded-full">
-												{member.experience}
-											</span>
-										</div>
-										
-										<p className="text-[#7B1FA2] font-semibold text-lg mb-3">{member.role}</p>
-										<p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">{member.bio}</p>
-										
-										<div className="flex items-center justify-between">
-											<div className="flex items-center text-gray-500">
-												<Mail className="h-4 w-4 mr-2" />
-												<span className="text-sm">İletişim</span>
-											</div>
-											<div className="flex items-center text-[#7B1FA2] group-hover:text-[#E040FB] transition-colors duration-300">
-												<span className="text-sm font-medium mr-2">Profili Gör</span>
-												<ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-											</div>
-										</div>
+									<div className="text-center">
+										<h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 font-serif group-hover:text-[#7B1FA2] transition-colors duration-300">
+											{member.name}
+										</h3>
+										<p className="text-[#9C27B0] font-medium mb-3 text-sm sm:text-base">{member.role}</p>
+										<p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-3">{member.bio}</p>
 									</div>
 								</CardContent>
 							</Card>
 						))}
 					</div>
 
-					<div className="text-center mt-16">
-						<p className="text-gray-600 mb-6 text-lg">Ekip üyelerimiz hakkında daha fazla bilgi edinmek ister misiniz?</p>
+					<div className="text-center mt-8 sm:mt-12">
+						<p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base px-4">Ekip üyelerimiz hakkında daha fazla bilgi edinmek ister misiniz?</p>
 						<Button
 							onClick={() => scrollToSection("contact")}
-							className="bg-white/80 border-2 border-[#7B1FA2] text-[#7B1FA2] hover:bg-[#7B1FA2] hover:text-white transition-all duration-300 px-8 py-3 text-lg font-medium rounded-xl backdrop-blur-sm shadow-lg hover:shadow-xl"
+							variant="outline"
+							className="border-[#7B1FA2] text-[#7B1FA2] hover:bg-[#7B1FA2] hover:text-white transition-all duration-300 px-6 py-2 text-sm sm:text-base"
 						>
-							<Users className="h-5 w-5 mr-2" />
 							İletişime Geçin
 						</Button>
 					</div>
@@ -738,22 +547,141 @@ export default function HomePage() {
 				<div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 					{/* Main Footer Content */}
 					<div className="py-12 lg:py-16">
-						<div className="border-t border-white/10">
-							<div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-								<div className="text-gray-400 text-sm text-center md:text-left">
-									© 2024 Corexis. Tüm hakları saklıdır.
+						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+							{/* Company Info */}
+							<div className="col-span-1 md:col-span-2 lg:col-span-1">
+								<div className="mb-6">
+									<h2 className="text-2xl sm:text-3xl font-bold text-gradient-corexis font-serif mb-4">Corexis</h2>
+									<p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+										İşbirliği, yenilikçilik ve mükemmelliğe olan bağlılığımızla olağanüstü sonuçlar sunmaya odaklanmış profesyonel ekibiz.
+									</p>
 								</div>
-								<div className="flex flex-wrap justify-center md:justify-end space-x-6 text-sm">
-									<a href="#" className="text-gray-400 hover:text-[#E040FB] transition-colors duration-200">
-										Gizlilik Politikası
+								<div className="flex space-x-4">
+									<a
+										href="#"
+										className="w-10 h-10 bg-white/10 hover:bg-gradient-corexis-primary text-white rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
+									>
+										<Twitter className="h-5 w-5" />
 									</a>
-									<a href="#" className="text-gray-400 hover:text-[#E040FB] transition-colors duration-200">
-										Kullanım Şartları
+									<a
+										href="#"
+										className="w-10 h-10 bg-white/10 hover:bg-gradient-corexis-primary text-white rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
+									>
+										<Linkedin className="h-5 w-5" />
 									</a>
-									<a href="#" className="text-gray-400 hover:text-[#E040FB] transition-colors duration-200">
-										Çerez Politikası
+									<a
+										href="#"
+										className="w-10 h-10 bg-white/10 hover:bg-gradient-corexis-primary text-white rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
+									>
+										<Mail className="h-5 w-5" />
 									</a>
 								</div>
+							</div>
+
+							{/* Quick Links */}
+							<div>
+								<h3 className="text-lg font-semibold text-white mb-4 font-serif">Hızlı Linkler</h3>
+								<ul className="space-y-3">
+									{[
+										{ label: "Hakkımızda", action: () => scrollToSection("about") },
+										{ label: "Ekibimiz", action: () => scrollToSection("team") },
+										{ label: "Güncellemeler", action: () => scrollToSection("updates") },
+										{ label: "İletişim", action: () => scrollToSection("contact") },
+									].map((item) => (
+										<li key={item.label}>
+											<button
+												onClick={item.action}
+												className="text-gray-300 hover:text-[#E040FB] transition-colors duration-200 text-sm sm:text-base"
+											>
+												{item.label}
+											</button>
+										</li>
+									))}
+								</ul>
+							</div>
+
+							{/* Services */}
+							<div>
+								<h3 className="text-lg font-semibold text-white mb-4 font-serif">Hizmetlerimiz</h3>
+								<ul className="space-y-3">
+									<li><span className="text-gray-300 text-sm sm:text-base">Stratejik Danışmanlık</span></li>
+									<li><span className="text-gray-300 text-sm sm:text-base">Teknoloji Çözümleri</span></li>
+									<li><span className="text-gray-300 text-sm sm:text-base">İş Geliştirme</span></li>
+									<li><span className="text-gray-300 text-sm sm:text-base">Dijital Dönüşüm</span></li>
+								</ul>
+							</div>
+
+							{/* Contact Info */}
+							<div>
+								<h3 className="text-lg font-semibold text-white mb-4 font-serif">İletişim Bilgileri</h3>
+								<div className="space-y-3">
+									<div className="flex items-start space-x-3">
+										<Mail className="h-5 w-5 text-[#E040FB] mt-0.5 flex-shrink-0" />
+										<div>
+											<p className="text-gray-300 text-sm sm:text-base">hello@corexis.com</p>
+										</div>
+									</div>
+									<div className="flex items-start space-x-3">
+										<svg className="h-5 w-5 text-[#E040FB] mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+											<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+										</svg>
+										<div>
+											<p className="text-gray-300 text-sm sm:text-base">+90 (212) 555-0123</p>
+										</div>
+									</div>
+									<div className="flex items-start space-x-3">
+										<svg className="h-5 w-5 text-[#E040FB] mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+											<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+											<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+										</svg>
+										<div>
+											<p className="text-gray-300 text-sm sm:text-base">
+												Teknoloji Caddesi No: 123<br />
+												Levent, İstanbul 34394
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					{/* Newsletter Signup */}
+					<div className="border-t border-white/10 py-8">
+						<div className="text-center">
+							<h3 className="text-xl font-semibold text-white mb-4 font-serif">Bültenimize Abone Olun</h3>
+							<p className="text-gray-300 mb-6 text-sm sm:text-base max-w-2xl mx-auto">
+								En son haberler, içgörüler ve güncellemeler için e-posta listemize katılın.
+							</p>
+							<div className="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
+								<input
+									type="email"
+									placeholder="E-posta adresiniz"
+									className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E040FB] focus:border-transparent"
+								/>
+								<Button className="bg-gradient-corexis-primary hover:bg-gradient-corexis-accent text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 border-0 whitespace-nowrap">
+									Abone Ol
+								</Button>
+							</div>
+						</div>
+					</div>
+
+					{/* Bottom Footer */}
+					<div className="border-t border-white/10 py-6">
+						<div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+							<div className="text-gray-400 text-sm text-center md:text-left">
+								© 2025 Corexis. Tüm hakları saklıdır.
+							</div>
+							<div className="flex flex-wrap justify-center md:justify-end space-x-6 text-sm">
+								<a href="#" className="text-gray-400 hover:text-[#E040FB] transition-colors duration-200">
+									Gizlilik Politikası
+								</a>
+								<a href="#" className="text-gray-400 hover:text-[#E040FB] transition-colors duration-200">
+									Kullanım Şartları
+								</a>
+								<a href="#" className="text-gray-400 hover:text-[#E040FB] transition-colors duration-200">
+									Çerez Politikası
+								</a>
 							</div>
 						</div>
 					</div>
