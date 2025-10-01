@@ -337,17 +337,17 @@ export default function HomePage() {
 								</CardContent>
 							</Card>
 						))}
+					</div>
 
-						<div className="text-center mt-12">
-							<p className="text-gray-600 mb-6">Ekip üyelerimiz hakkında daha fazla bilgi edinmek ister misiniz?</p>
-							<Button
-								onClick={() => scrollToSection("contact")}
-								variant="outline"
-								className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300"
-							>
-								İletişime Geçin
-							</Button>
-						</div>
+					<div className="text-center mt-12">
+						<p className="text-gray-600 mb-6">Ekip üyelerimiz hakkında daha fazla bilgi edinmek ister misiniz?</p>
+						<Button
+							onClick={() => scrollToSection("contact")}
+							variant="outline"
+							className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300"
+						>
+							İletişime Geçin
+						</Button>
 					</div>
 				</div>
 			</section>
