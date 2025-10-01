@@ -541,6 +541,152 @@ export default function HomePage() {
 					</div>
 				</div>
 			</section>
+
+			{/* Footer */}
+			<footer className="bg-gradient-to-br from-gray-900 via-purple-900 to-pink-900 text-white">
+				<div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+					{/* Main Footer Content */}
+					<div className="py-12 lg:py-16">
+						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+							{/* Company Info */}
+							<div className="col-span-1 md:col-span-2 lg:col-span-1">
+								<div className="mb-6">
+									<h2 className="text-2xl sm:text-3xl font-bold text-gradient-corexis font-serif mb-4">Corexis</h2>
+									<p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+										İşbirliği, yenilikçilik ve mükemmelliğe olan bağlılığımızla olağanüstü sonuçlar sunmaya odaklanmış profesyonel ekibiz.
+									</p>
+								</div>
+								<div className="flex space-x-4">
+									<a
+										href="#"
+										className="w-10 h-10 bg-white/10 hover:bg-gradient-corexis-primary text-white rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
+									>
+										<Twitter className="h-5 w-5" />
+									</a>
+									<a
+										href="#"
+										className="w-10 h-10 bg-white/10 hover:bg-gradient-corexis-primary text-white rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
+									>
+										<Linkedin className="h-5 w-5" />
+									</a>
+									<a
+										href="#"
+										className="w-10 h-10 bg-white/10 hover:bg-gradient-corexis-primary text-white rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
+									>
+										<Mail className="h-5 w-5" />
+									</a>
+								</div>
+							</div>
+
+							{/* Quick Links */}
+							<div>
+								<h3 className="text-lg font-semibold text-white mb-4 font-serif">Hızlı Linkler</h3>
+								<ul className="space-y-3">
+									{[
+										{ label: "Hakkımızda", action: () => scrollToSection("about") },
+										{ label: "Ekibimiz", action: () => scrollToSection("team") },
+										{ label: "Güncellemeler", action: () => scrollToSection("updates") },
+										{ label: "İletişim", action: () => scrollToSection("contact") },
+									].map((item) => (
+										<li key={item.label}>
+											<button
+												onClick={item.action}
+												className="text-gray-300 hover:text-[#E040FB] transition-colors duration-200 text-sm sm:text-base"
+											>
+												{item.label}
+											</button>
+										</li>
+									))}
+								</ul>
+							</div>
+
+							{/* Services */}
+							<div>
+								<h3 className="text-lg font-semibold text-white mb-4 font-serif">Hizmetlerimiz</h3>
+								<ul className="space-y-3">
+									<li><span className="text-gray-300 text-sm sm:text-base">Stratejik Danışmanlık</span></li>
+									<li><span className="text-gray-300 text-sm sm:text-base">Teknoloji Çözümleri</span></li>
+									<li><span className="text-gray-300 text-sm sm:text-base">İş Geliştirme</span></li>
+									<li><span className="text-gray-300 text-sm sm:text-base">Dijital Dönüşüm</span></li>
+								</ul>
+							</div>
+
+							{/* Contact Info */}
+							<div>
+								<h3 className="text-lg font-semibold text-white mb-4 font-serif">İletişim Bilgileri</h3>
+								<div className="space-y-3">
+									<div className="flex items-start space-x-3">
+										<Mail className="h-5 w-5 text-[#E040FB] mt-0.5 flex-shrink-0" />
+										<div>
+											<p className="text-gray-300 text-sm sm:text-base">hello@corexis.com</p>
+										</div>
+									</div>
+									<div className="flex items-start space-x-3">
+										<svg className="h-5 w-5 text-[#E040FB] mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+											<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+										</svg>
+										<div>
+											<p className="text-gray-300 text-sm sm:text-base">+90 (212) 555-0123</p>
+										</div>
+									</div>
+									<div className="flex items-start space-x-3">
+										<svg className="h-5 w-5 text-[#E040FB] mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+											<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+											<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+										</svg>
+										<div>
+											<p className="text-gray-300 text-sm sm:text-base">
+												Teknoloji Caddesi No: 123<br />
+												Levent, İstanbul 34394
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					{/* Newsletter Signup */}
+					<div className="border-t border-white/10 py-8">
+						<div className="text-center">
+							<h3 className="text-xl font-semibold text-white mb-4 font-serif">Bültenimize Abone Olun</h3>
+							<p className="text-gray-300 mb-6 text-sm sm:text-base max-w-2xl mx-auto">
+								En son haberler, içgörüler ve güncellemeler için e-posta listemize katılın.
+							</p>
+							<div className="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
+								<input
+									type="email"
+									placeholder="E-posta adresiniz"
+									className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E040FB] focus:border-transparent"
+								/>
+								<Button className="bg-gradient-corexis-primary hover:bg-gradient-corexis-accent text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 border-0 whitespace-nowrap">
+									Abone Ol
+								</Button>
+							</div>
+						</div>
+					</div>
+
+					{/* Bottom Footer */}
+					<div className="border-t border-white/10 py-6">
+						<div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+							<div className="text-gray-400 text-sm text-center md:text-left">
+								© 2024 Corexis. Tüm hakları saklıdır.
+							</div>
+							<div className="flex flex-wrap justify-center md:justify-end space-x-6 text-sm">
+								<a href="#" className="text-gray-400 hover:text-[#E040FB] transition-colors duration-200">
+									Gizlilik Politikası
+								</a>
+								<a href="#" className="text-gray-400 hover:text-[#E040FB] transition-colors duration-200">
+									Kullanım Şartları
+								</a>
+								<a href="#" className="text-gray-400 hover:text-[#E040FB] transition-colors duration-200">
+									Çerez Politikası
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
 		</div>
 	)
 }
