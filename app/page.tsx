@@ -15,7 +15,6 @@ const teamMembers = [
 		name: "Berkay Düzgün",
 		role: "CEO",
 		bio: "Ölçeklenebilir mimari ve yeni teknolojiler konusunda uzmanlaşan teknoloji eksperi. Teknik yeniliklerimizi ileriye taşıyor.",
-		email: "berkay@corexis.com",
 		image: "/berkay.jpeg",
 	},
 	{
@@ -23,7 +22,6 @@ const teamMembers = [
 		name: "Berke Düzgün",
 		role: "Danışman",
 		bio: "Stratejik planlama ve iş geliştirme alanında 10+ yıllık deneyime sahip vizyoner lider. Yenilikçi çözümler oluşturma konusunda tutkulu.",
-		email: "berke@corexis.com",
 		image: "/berke.jpeg",
 	},
   	{
@@ -31,7 +29,6 @@ const teamMembers = [
 		name: "Berke Düzgün",
 		role: "Danışman",
 		bio: "Stratejik planlama ve iş geliştirme alanında 10+ yıllık deneyime sahip vizyoner lider. Yenilikçi çözümler oluşturma konusunda tutkulu.",
-		email: "berke@corexis.com",
 		image: "/berke.jpeg",
 	},
 
@@ -330,11 +327,6 @@ export default function HomePage() {
 										</h3>
 										<p className="text-[#9C27B0] font-medium mb-3 text-sm sm:text-base">{member.role}</p>
 										<p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-3">{member.bio}</p>
-
-										<div className="flex items-center justify-center text-gray-500 hover:text-[#E040FB] transition-colors duration-200">
-											<Mail className="h-3 w-3 sm:h-4 sm:w-4 mr-2" />
-											<span className="text-xs sm:text-sm">{member.email}</span>
-										</div>
 									</div>
 								</CardContent>
 							</Card>
