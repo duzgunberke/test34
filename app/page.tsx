@@ -40,75 +40,43 @@ const teamMembers = [
 // Blog posts data for the updates section
 const blogPosts = [
 	{
-		id: "future-of-remote-collaboration",
-		title: "The Future of Remote Collaboration: Trends and Technologies",
+		id: "yapay-zeka-gunluk-hayat",
+		title: "Yapay Zeka Günlük Hayatımızı Nasıl Değiştiriyor?",
 		excerpt:
-			"Explore how emerging technologies are reshaping the way teams collaborate remotely, from AI-powered tools to immersive virtual workspaces.",
-		coverImage: "/blog-remote-collaboration.jpg",
-		author: "Berke Düzgün",
-		date: "2024-01-15",
-		readTime: "5 min read",
-		category: "Technology",
+			"Yapay zekanın günlük yaşamımızdaki etkilerini keşfedin: akıllı asistanlardan kişiselleştirilmiş önerilere, sağlıktan eğitime kadar her alanda nasıl devrim yarattığını öğrenin.",
+		coverImage: "/blog-yapay-zeka.jpg",
+		author: "Ayşe Yılmaz",
+		date: "2024-02-10",
+		readTime: "6 dk okuma",
+		category: "Teknoloji",
 	},
 	{
-		id: "building-scalable-systems",
-		title: "Building Scalable Systems: Lessons from the Trenches",
+		id: "modern-web-gelistirme",
+		title: "Modern Web Geliştirme: 2024 Trendleri ve En İyi Uygulamalar",
 		excerpt:
-			"Learn key principles and best practices for designing systems that can handle massive scale, based on real-world experience and proven methodologies.",
-		coverImage: "/blog-scalable-systems.jpg",
-		author: "Berkay Düzgün",
-		date: "2024-01-10",
-		readTime: "8 min read",
-		category: "Engineering",
+			"React, Next.js ve TypeScript ile modern web uygulamaları geliştirmenin inceliklerini keşfedin. Performans, güvenlik ve kullanıcı deneyimi için en iyi stratejileri öğrenin.",
+		coverImage: "/blog-web-gelistirme.jpg",
+		author: "Mehmet Kaya",
+		date: "2024-02-05",
+		readTime: "8 dk okuma",
+		category: "Yazılım Geliştirme",
 	},
 	{
-		id: "design-thinking-innovation",
-		title: "Design Thinking: A Catalyst for Innovation",
+		id: "dijital-donusum-stratejileri",
+		title: "Şirketler İçin Dijital Dönüşüm Rehberi",
 		excerpt:
-			"Discover how design thinking methodology can transform your approach to problem-solving and drive meaningful innovation in your organization.",
-		coverImage: "/blog-design-thinking.jpg",
-		author: "Emily Rodriguez",
-		date: "2024-01-05",
-		readTime: "6 min read",
-		category: "Design",
-	},
-	{
-		id: "performance-optimization-guide",
-		title: "Web Performance Optimization: A Complete Guide",
-		excerpt:
-			"Master the art of web performance optimization with practical techniques, tools, and strategies to make your applications lightning fast.",
-		coverImage: "/blog-performance-optimization.jpg",
-		author: "David Kim",
-		date: "2023-12-28",
-		readTime: "10 min read",
-		category: "Development",
-	},
-	{
-		id: "digital-marketing-trends-2024",
-		title: "Digital Marketing Trends That Will Define 2024",
-		excerpt:
-			"Stay ahead of the curve with insights into the latest digital marketing trends, from AI-driven personalization to emerging social platforms.",
-		coverImage: "/blog-marketing-trends.jpg",
-		author: "Lisa Thompson",
-		date: "2023-12-20",
-		readTime: "7 min read",
-		category: "Marketing",
-	},
-	{
-		id: "operational-excellence-framework",
-		title: "Building an Operational Excellence Framework",
-		excerpt:
-			"Learn how to create and implement a comprehensive operational excellence framework that drives efficiency and continuous improvement.",
-		coverImage: "/blog-operational-excellence.jpg",
-		author: "James Wilson",
-		date: "2023-12-15",
-		readTime: "9 min read",
-		category: "Operations",
+			"İşletmenizi dijital çağa taşıyın. Başarılı dijital dönüşüm için stratejiler, yaygın tuzaklar ve gerçek dünya örnekleriyle kapsamlı bir rehber.",
+		coverImage: "/blog-dijital-donusum.jpg",
+		author: "Zeynep Arslan",
+		date: "2024-01-28",
+		readTime: "7 dk okuma",
+		category: "İş Stratejisi",
 	},
 ]
 
 export default function HomePage() {
 	const [activeSection, setActiveSection] = useState("hero")
+	const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 	const router = useRouter()
 
 	useEffect(() => {
@@ -156,12 +124,12 @@ export default function HomePage() {
 					<div className="flex items-center justify-between h-16">
 						{/* Logo */}
 						<div className="flex-shrink-0">
-							<h1 className="text-2xl font-bold text-blue-600 font-serif">Corexis</h1>
+							<h1 className="text-xl sm:text-2xl font-bold text-blue-600 font-serif">Corexis</h1>
 						</div>
 
-						{/* Navigation Menu */}
+						{/* Desktop Navigation Menu */}
 						<div className="hidden md:block">
-							<div className="ml-10 flex items-baseline space-x-8">
+							<div className="ml-10 flex items-baseline space-x-4 lg:space-x-8">
 								{[
 									{ id: "about", label: "Hakkımızda" },
 									{ id: "team", label: "Ekibimiz" },
@@ -183,13 +151,47 @@ export default function HomePage() {
 
 						{/* Mobile menu button */}
 						<div className="md:hidden">
-							<button className="text-gray-700 hover:text-blue-600 p-2">
+							<button 
+								className="text-gray-700 hover:text-blue-600 p-2"
+								onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+							>
 								<svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-									<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+									{mobileMenuOpen ? (
+										<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+									) : (
+										<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+									)}
 								</svg>
 							</button>
 						</div>
 					</div>
+
+					{/* Mobile Navigation Menu */}
+					{mobileMenuOpen && (
+						<div className="md:hidden">
+							<div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
+								{[
+									{ id: "about", label: "Hakkımızda" },
+									{ id: "team", label: "Ekibimiz" },
+									{ id: "updates", label: "Güncellemeler" },
+									{ id: "contact", label: "İletişim" },
+								].map((item) => (
+									<button
+										key={item.id}
+										onClick={() => {
+											scrollToSection(item.id)
+											setMobileMenuOpen(false)
+										}}
+										className={`block w-full text-left px-3 py-2 text-base font-medium transition-colors duration-200 hover:text-cyan-500 ${
+											activeSection === item.id ? "text-blue-600 bg-blue-50" : "text-gray-700"
+										}`}
+									>
+										{item.label}
+									</button>
+								))}
+							</div>
+						</div>
+					)}
 				</div>
 			</nav>
 
@@ -200,17 +202,17 @@ export default function HomePage() {
 			>
 				<div className="absolute inset-0 bg-[url('/abstract-geometric-pattern.png')] opacity-5"></div>
 				<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-					<h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 font-serif leading-tight animate-fade-in">
+					<h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-4 sm:mb-6 font-serif leading-tight animate-fade-in">
 						İşbirliğini Güçlendiriyor,
 						<br />
 						<span className="text-blue-600">Başarıyı Yönlendiriyoruz</span>
 					</h1>
-					<p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
+					<p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed px-4">
 						Yaptığımız her işte mükemmellik ve yenilikçiliğe bağlı olan özel ekibimizle tanışın.
 					</p>
 					<Button
 						onClick={() => scrollToSection("about")}
-						className="bg-blue-600 hover:bg-cyan-500 text-white px-8 py-4 text-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+						className="bg-blue-600 hover:bg-cyan-500 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
 					>
 						Bizi Tanıyın
 					</Button>
@@ -218,33 +220,33 @@ export default function HomePage() {
 			</section>
 
 			{/* About Us Section */}
-			<section id="about" className="py-20 bg-white">
+			<section id="about" className="py-12 sm:py-16 lg:py-20 bg-white">
 				<div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-					<div className="text-center mb-16">
-						<h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-serif">Hakkımızda</h2>
-						<p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+					<div className="text-center mb-12 sm:mb-16">
+						<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 font-serif">Hakkımızda</h2>
+						<p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
 							İşbirliği, yenilikçilik ve mükemmelliğe olan sarsılmaz bağlılığımız aracılığıyla olağanüstü sonuçlar sunmaya adanmış dinamik bir profesyoneller ekibiyiz.
 						</p>
 					</div>
 
-					<div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-						<div>
+					<div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center mb-12 lg:mb-16">
+						<div className="order-2 md:order-1">
 							<img
 								src="/professional-team-collaboration.png"
 								alt="Our team collaborating"
 								className="rounded-lg shadow-lg w-full h-auto"
 							/>
 						</div>
-						<div className="space-y-6">
+						<div className="space-y-6 order-1 md:order-2">
 							<div>
-								<h3 className="text-2xl font-semibold text-gray-900 mb-3 font-serif">Hikayemiz</h3>
-								<p className="text-gray-600 leading-relaxed">
+								<h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-3 font-serif">Hikayemiz</h3>
+								<p className="text-gray-600 leading-relaxed text-sm sm:text-base">
 									Ekiplerin nasıl işbirliği yaptığını ve hedeflerine nasıl ulaştığını dönüştürme vizyonuyla kurulmuş olan şirketimiz, yenilikçi çözümler ve olağanüstü hizmet sunumu arayan organizasyonlar için güvenilir bir partner haline gelmiştir.
 								</p>
 							</div>
 							<div>
-								<h3 className="text-2xl font-semibold text-gray-900 mb-3 font-serif">Önemli Olan Deneyim</h3>
-								<p className="text-gray-600 leading-relaxed">
+								<h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-3 font-serif">Önemli Olan Deneyim</h3>
+								<p className="text-gray-600 leading-relaxed text-sm sm:text-base">
 									Farklı sektörlerde{" "}
 									<span className="font-semibold text-blue-600">15 yılı</span> aşan birleşik deneyimimizle, ekibimiz üstlendiğimiz her projeye derin uzmanlık ve yeni perspektifler getiriyor.
 								</p>
@@ -252,43 +254,43 @@ export default function HomePage() {
 						</div>
 					</div>
 
-					<div className="grid md:grid-cols-2 gap-8">
-						<Card className="p-8 border-l-4 border-l-blue-600 shadow-lg hover:shadow-xl transition-shadow duration-300">
+					<div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+						<Card className="p-6 lg:p-8 border-l-4 border-l-blue-600 shadow-lg hover:shadow-xl transition-shadow duration-300">
 							<CardContent className="p-0">
-								<h3 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">Misyonumuz</h3>
-								<p className="text-gray-600 leading-relaxed">
+								<h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4 font-serif">Misyonumuz</h3>
+								<p className="text-gray-600 leading-relaxed text-sm sm:text-base">
 									Yenilikçi çözümler sunarak, işbirliğini teşvik ederek ve sürdürülebilir büyüme ve başarıyı yönlendiren olağanüstü sonuçlar sunarak ekipleri ve organizasyonları güçlendirmek.
 								</p>
 							</CardContent>
 						</Card>
 
-						<Card className="p-8 border-l-4 border-l-cyan-500 shadow-lg hover:shadow-xl transition-shadow duration-300">
+						<Card className="p-6 lg:p-8 border-l-4 border-l-cyan-500 shadow-lg hover:shadow-xl transition-shadow duration-300">
 							<CardContent className="p-0">
-								<h3 className="text-2xl font-semibold text-gray-900 mb-4 font-serif">Hedeflerimiz</h3>
-								<p className="text-gray-600 leading-relaxed">
+								<h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4 font-serif">Hedeflerimiz</h3>
+								<p className="text-gray-600 leading-relaxed text-sm sm:text-base">
 									Yaptığımız her işte kalite, dürüstlük ve müşteri memnuniyetine olan bağlılığımızı korurken sürekli yenilik yapmak, uzmanlığımızı genişletmek ve kalıcı ortaklıklar kurmak.
 								</p>
 							</CardContent>
 						</Card>
 					</div>
 
-					<div className="mt-16 text-center">
-						<div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+					<div className="mt-12 lg:mt-16 text-center">
+						<div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-8">
 							<div className="text-center">
-								<div className="text-3xl font-bold text-blue-600 mb-2">15+</div>
-								<div className="text-gray-600">Yıllık Deneyim</div>
+								<div className="text-2xl sm:text-3xl font-bold text-blue-600 mb-2">15+</div>
+								<div className="text-gray-600 text-sm sm:text-base">Yıllık Deneyim</div>
 							</div>
 							<div className="text-center">
-								<div className="text-3xl font-bold text-blue-600 mb-2">100+</div>
-								<div className="text-gray-600">Tamamlanan Proje</div>
+								<div className="text-2xl sm:text-3xl font-bold text-blue-600 mb-2">100+</div>
+								<div className="text-gray-600 text-sm sm:text-base">Tamamlanan Proje</div>
 							</div>
 							<div className="text-center">
-								<div className="text-3xl font-bold text-blue-600 mb-2">50+</div>
-								<div className="text-gray-600">Mutlu Müşteri</div>
+								<div className="text-2xl sm:text-3xl font-bold text-blue-600 mb-2">50+</div>
+								<div className="text-gray-600 text-sm sm:text-base">Mutlu Müşteri</div>
 							</div>
 							<div className="text-center">
-								<div className="text-3xl font-bold text-blue-600 mb-2">24/7</div>
-								<div className="text-gray-600">Destek Mevcudiyeti</div>
+								<div className="text-2xl sm:text-3xl font-bold text-blue-600 mb-2">24/7</div>
+								<div className="text-gray-600 text-sm sm:text-base">Destek Mevcudiyeti</div>
 							</div>
 						</div>
 					</div>
@@ -296,24 +298,24 @@ export default function HomePage() {
 			</section>
 
 			{/* Team Section */}
-			<section id="team" className="py-20 bg-slate-50">
+			<section id="team" className="py-12 sm:py-16 lg:py-20 bg-slate-50">
 				<div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-					<div className="text-center mb-16">
-						<h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-serif">Ekibimiz</h2>
-						<p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-							Basarımızı yönlendiren yetenekli bireylerle tanışın. Her üye, olağanüstü sonuçlar sunmak için benzersiz uzmanlık ve tutku getiriyor.
+					<div className="text-center mb-12 sm:mb-16">
+						<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 font-serif">Ekibimiz</h2>
+						<p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
+							Başarımızı yönlendiren yetenekli bireylerle tanışın. Her üye, olağanüstü sonuçlar sunmak için benzersiz uzmanlık ve tutku getiriyor.
 						</p>
 					</div>
 
-					<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
 						{teamMembers.map((member) => (
 							<Card
 								key={member.id}
 								className="group cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-2 bg-white border-0 shadow-lg"
 								onClick={() => handleMemberClick(member.id)}
 							>
-								<CardContent className="p-6">
-									<div className="aspect-square relative overflow-hidden rounded-full mx-auto mb-6 w-48 h-48">
+								<CardContent className="p-4 sm:p-6">
+									<div className="aspect-square relative overflow-hidden rounded-full mx-auto mb-4 sm:mb-6 w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48">
 										<img
 											src={member.image || "/placeholder.svg"}
 											alt={member.name}
@@ -323,15 +325,15 @@ export default function HomePage() {
 									</div>
 
 									<div className="text-center">
-										<h3 className="text-xl font-semibold text-gray-900 mb-2 font-serif group-hover:text-blue-600 transition-colors duration-300">
+										<h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 font-serif group-hover:text-blue-600 transition-colors duration-300">
 											{member.name}
 										</h3>
-										<p className="text-blue-600 font-medium mb-3">{member.role}</p>
-										<p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">{member.bio}</p>
+										<p className="text-blue-600 font-medium mb-3 text-sm sm:text-base">{member.role}</p>
+										<p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-3">{member.bio}</p>
 
 										<div className="flex items-center justify-center text-gray-500 hover:text-cyan-500 transition-colors duration-200">
-											<Mail className="h-4 w-4 mr-2" />
-											<span className="text-sm">{member.email}</span>
+											<Mail className="h-3 w-3 sm:h-4 sm:w-4 mr-2" />
+											<span className="text-xs sm:text-sm">{member.email}</span>
 										</div>
 									</div>
 								</CardContent>
@@ -339,12 +341,12 @@ export default function HomePage() {
 						))}
 					</div>
 
-					<div className="text-center mt-12">
-						<p className="text-gray-600 mb-6">Ekip üyelerimiz hakkında daha fazla bilgi edinmek ister misiniz?</p>
+					<div className="text-center mt-8 sm:mt-12">
+						<p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base px-4">Ekip üyelerimiz hakkında daha fazla bilgi edinmek ister misiniz?</p>
 						<Button
 							onClick={() => scrollToSection("contact")}
 							variant="outline"
-							className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300"
+							className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300 px-6 py-2 text-sm sm:text-base"
 						>
 							İletişime Geçin
 						</Button>
@@ -353,16 +355,16 @@ export default function HomePage() {
 			</section>
 
 			{/* Updates/Blog Section */}
-			<section id="updates" className="py-20 bg-white">
+			<section id="updates" className="py-12 sm:py-16 lg:py-20 bg-white">
 				<div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-					<div className="text-center mb-16">
-						<h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-serif">Görüşler ve Güncellemeler</h2>
-						<p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+					<div className="text-center mb-12 sm:mb-16">
+						<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 font-serif">Görüşler ve Güncellemeler</h2>
+						<p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
 							Uzman ekibimizden en son düşünceler, sektör içgörüleri ve güncellemelerle bilgilenmede kalın.
 						</p>
 					</div>
 
-					<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
 						{blogPosts.map((post) => (
 							<Card
 								key={post.id}
@@ -384,15 +386,15 @@ export default function HomePage() {
 										<div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 									</div>
 
-									<div className="p-6">
-										<h3 className="text-xl font-semibold text-gray-900 mb-3 font-serif group-hover:text-blue-600 transition-colors duration-300 line-clamp-2">
+									<div className="p-4 sm:p-6">
+										<h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 font-serif group-hover:text-blue-600 transition-colors duration-300 line-clamp-2">
 											{post.title}
 										</h3>
-										<p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">{post.excerpt}</p>
+										<p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-3">{post.excerpt}</p>
 
-										<div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+										<div className="flex items-center justify-between text-xs sm:text-sm text-gray-500 mb-4">
 											<div className="flex items-center">
-												<Calendar className="h-4 w-4 mr-2" />
+												<Calendar className="h-3 w-3 sm:h-4 sm:w-4 mr-2" />
 												<span>
 													{new Date(post.date).toLocaleDateString("en-US", {
 														year: "numeric",
@@ -402,16 +404,16 @@ export default function HomePage() {
 												</span>
 											</div>
 											<div className="flex items-center">
-												<Clock className="h-4 w-4 mr-2" />
+												<Clock className="h-3 w-3 sm:h-4 sm:w-4 mr-2" />
 												<span>{post.readTime}</span>
 											</div>
 										</div>
 
 										<div className="flex items-center justify-between">
-											<span className="text-sm text-gray-600">By {post.author}</span>
+											<span className="text-xs sm:text-sm text-gray-600">By {post.author}</span>
 											<div className="flex items-center text-blue-600 group-hover:text-cyan-500 transition-colors duration-200">
-												<span className="text-sm font-medium mr-2">Read More</span>
-												<ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+												<span className="text-xs sm:text-sm font-medium mr-2">Read More</span>
+												<ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-200 group-hover:translate-x-1" />
 											</div>
 										</div>
 									</div>
@@ -420,11 +422,11 @@ export default function HomePage() {
 						))}
 					</div>
 
-					<div className="text-center mt-12">
-						<p className="text-gray-600 mb-6">En son görüşlerimizle güncel kalmak ister misiniz?</p>
+					<div className="text-center mt-8 sm:mt-12">
+						<p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base px-4">En son görüşlerimizle güncel kalmak ister misiniz?</p>
 						<Button
 							onClick={() => scrollToSection("contact")}
-							className="bg-blue-600 hover:bg-cyan-500 text-white px-8 py-3 text-lg font-medium transition-all duration-300"
+							className="bg-blue-600 hover:bg-cyan-500 text-white px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-lg font-medium transition-all duration-300"
 						>
 							Güncellemelere Abone Olun
 						</Button>
@@ -433,41 +435,41 @@ export default function HomePage() {
 			</section>
 
 			{/* Contact Section */}
-			<section id="contact" className="py-20 bg-slate-50">
+			<section id="contact" className="py-12 sm:py-16 lg:py-20 bg-slate-50">
 				<div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-					<div className="text-center mb-16">
-						<h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-serif">İletişime Geçin</h2>
-						<p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+					<div className="text-center mb-12 sm:mb-16">
+						<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 font-serif">İletişime Geçin</h2>
+						<p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
 							Bir sonraki projenizi başlatmaya hazır mısınız veya hizmetlerimiz hakkında sorularınız mı var? Sizden haber almak isteriz.
 						</p>
 					</div>
 
-					<div className="grid lg:grid-cols-2 gap-12">
+					<div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
 						{/* Contact Information */}
-						<div className="space-y-8">
+						<div className="space-y-6 lg:space-y-8">
 							<div>
-								<h3 className="text-2xl font-semibold text-gray-900 mb-6 font-serif">Bağlanalım</h3>
-								<p className="text-gray-600 leading-relaxed mb-8">
+								<h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4 sm:mb-6 font-serif">Bağlanalım</h3>
+								<p className="text-gray-600 leading-relaxed mb-6 lg:mb-8 text-sm sm:text-base">
 									İşbirliği yapmak, uzman danışmanlığına ihtiyaç duymak veya hizmetlerimiz hakkında daha fazla bilgi edinmek istiyorsanız, size yardımcı olmak için buradayız. Aşağıdaki kanallardan herhangi biri aracılığıyla ulaşın veya iletişim formunu kullanın.
 								</p>
 							</div>
 
 							{/* Contact Details */}
-							<div className="space-y-6">
+							<div className="space-y-4 sm:space-y-6">
 								<div className="flex items-start space-x-4">
-									<div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-										<Mail className="h-6 w-6 text-blue-600" />
+									<div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+										<Mail className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600" />
 									</div>
 									<div>
-										<h4 className="text-lg font-semibold text-gray-900 mb-1">E-posta Gönderin</h4>
-										<p className="text-gray-600">hello@corexis.com</p>
-										<p className="text-sm text-gray-500">24 saat içinde yanıt vereceğiz</p>
+										<h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-1">E-posta Gönderin</h4>
+										<p className="text-gray-600 text-sm sm:text-base">hello@corexis.com</p>
+										<p className="text-xs sm:text-sm text-gray-500">24 saat içinde yanıt vereceğiz</p>
 									</div>
 								</div>
 
 								<div className="flex items-start space-x-4">
-									<div className="flex-shrink-0 w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center">
-										<svg className="h-6 w-6 text-cyan-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									<div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-cyan-100 rounded-lg flex items-center justify-center">
+										<svg className="h-5 w-5 sm:h-6 sm:w-6 text-cyan-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 											<path
 												strokeLinecap="round"
 												strokeLinejoin="round"
@@ -477,15 +479,15 @@ export default function HomePage() {
 										</svg>
 									</div>
 									<div>
-										<h4 className="text-lg font-semibold text-gray-900 mb-1">Bizi Arayın</h4>
-										<p className="text-gray-600">+90 (212) 555-0123</p>
-										<p className="text-sm text-gray-500">Pzt-Cum, 09:00-18:00</p>
+										<h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-1">Bizi Arayın</h4>
+										<p className="text-gray-600 text-sm sm:text-base">+90 (212) 555-0123</p>
+										<p className="text-xs sm:text-sm text-gray-500">Pzt-Cum, 09:00-18:00</p>
 									</div>
 								</div>
 
 								<div className="flex items-start space-x-4">
-									<div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-										<svg className="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									<div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-green-100 rounded-lg flex items-center justify-center">
+										<svg className="h-5 w-5 sm:h-6 sm:w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 											<path
 												strokeLinecap="round"
 												strokeLinejoin="round"
@@ -501,17 +503,17 @@ export default function HomePage() {
 										</svg>
 									</div>
 									<div>
-										<h4 className="text-lg font-semibold text-gray-900 mb-1">Ziyaret Edin</h4>
-										<p className="text-gray-600">Teknoloji Caddesi No: 123</p>
-										<p className="text-gray-600">Levent, İstanbul 34394</p>
-										<p className="text-sm text-gray-500">Sadece randevu ile</p>
+										<h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-1">Ziyaret Edin</h4>
+										<p className="text-gray-600 text-sm sm:text-base">Teknoloji Caddesi No: 123</p>
+										<p className="text-gray-600 text-sm sm:text-base">Levent, İstanbul 34394</p>
+										<p className="text-xs sm:text-sm text-gray-500">Sadece randevu ile</p>
 									</div>
 								</div>
 							</div>
 
 							{/* Social Links */}
-							<div className="pt-8 border-t border-gray-200">
-								<h4 className="text-lg font-semibold text-gray-900 mb-4">Bizi Takip Edin</h4>
+							<div className="pt-6 lg:pt-8 border-t border-gray-200">
+								<h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-4">Bizi Takip Edin</h4>
 								<div className="flex space-x-4">
 									<a
 										href="#"
@@ -538,9 +540,9 @@ export default function HomePage() {
 						</div>
 
 						{/* Contact Form */}
-						<Card className="bg-white shadow-xl border-0">
-							<CardContent className="p-8">
-								<h3 className="text-2xl font-semibold text-gray-900 mb-6 font-serif">Bize Mesaj Gönderin</h3>
+						<Card className="bg-white shadow-xl border-0 mt-8 lg:mt-0">
+							<CardContent className="p-6 sm:p-8">
+								<h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4 sm:mb-6 font-serif">Bize Mesaj Gönderin</h3>
 								<ContactForm />
 							</CardContent>
 						</Card>
@@ -588,9 +590,9 @@ function ContactForm() {
 	}
 
 	return (
-		<form onSubmit={handleSubmit} className="space-y-6">
+		<form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
 			{/* Name and Email Row */}
-			<div className="grid md:grid-cols-2 gap-6">
+			<div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
 				<div>
 					<label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
 						Ad Soyad *
@@ -602,7 +604,7 @@ function ContactForm() {
 						required
 						value={formData.name}
 						onChange={handleInputChange}
-						className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+						className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
 						placeholder="Adınız ve soyadınız"
 					/>
 				</div>
@@ -617,7 +619,7 @@ function ContactForm() {
 						required
 						value={formData.email}
 						onChange={handleInputChange}
-						className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+						className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
 						placeholder="email@ornek.com"
 					/>
 				</div>
@@ -634,7 +636,7 @@ function ContactForm() {
 					required
 					value={formData.subject}
 					onChange={handleInputChange}
-					className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+					className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
 				>
 					<option value="">Bir konu seçin</option>
 					<option value="general">Genel Sorgu</option>
@@ -655,10 +657,10 @@ function ContactForm() {
 					id="message"
 					name="message"
 					required
-					rows={6}
+					rows={5}
 					value={formData.message}
 					onChange={handleInputChange}
-					className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 resize-vertical"
+					className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 resize-vertical"
 					placeholder="Projeniz, sorularınız veya size nasıl yardımcı olabileceğimiz hakkında bize anlatın..."
 				/>
 			</div>
@@ -668,11 +670,11 @@ function ContactForm() {
 				<Button
 					type="submit"
 					disabled={isSubmitting}
-					className="w-full bg-blue-600 hover:bg-cyan-500 text-white py-3 text-lg font-medium transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+					className="w-full bg-blue-600 hover:bg-cyan-500 text-white py-2 sm:py-3 text-sm sm:text-lg font-medium transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
 				>
 					{isSubmitting ? (
 						<div className="flex items-center justify-center">
-							<div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+							<div className="animate-spin rounded-full h-4 w-4 sm:h-5 sm:w-5 border-b-2 border-white mr-2"></div>
 							Mesaj Gönderiliyor...
 						</div>
 					) : (
@@ -683,21 +685,21 @@ function ContactForm() {
 
 			{/* Status Messages */}
 			{submitStatus === "success" && (
-				<div className="p-4 bg-green-50 border border-green-200 rounded-lg">
+				<div className="p-3 sm:p-4 bg-green-50 border border-green-200 rounded-lg">
 					<div className="flex items-center">
-						<svg className="h-5 w-5 text-green-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<svg className="h-4 w-4 sm:h-5 sm:w-5 text-green-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 							<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
 						</svg>
-						<p className="text-green-800 font-medium">Mesaj başarıyla gönderildi!</p>
+						<p className="text-green-800 font-medium text-sm sm:text-base">Mesaj başarıyla gönderildi!</p>
 					</div>
-					<p className="text-green-700 text-sm mt-1">24 saat içinde size geri döneceğiz.</p>
+					<p className="text-green-700 text-xs sm:text-sm mt-1">24 saat içinde size geri döneceğiz.</p>
 				</div>
 			)}
 
 			{submitStatus === "error" && (
-				<div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+				<div className="p-3 sm:p-4 bg-red-50 border border-red-200 rounded-lg">
 					<div className="flex items-center">
-						<svg className="h-5 w-5 text-red-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<svg className="h-4 w-4 sm:h-5 sm:w-5 text-red-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 							<path
 								strokeLinecap="round"
 								strokeLinejoin="round"
@@ -705,14 +707,14 @@ function ContactForm() {
 								d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
 							/>
 						</svg>
-						<p className="text-red-800 font-medium">Mesaj gönderilemedi.</p>
+						<p className="text-red-800 font-medium text-sm sm:text-base">Mesaj gönderilemedi.</p>
 					</div>
-					<p className="text-red-700 text-sm mt-1">Lütfen tekrar deneyin veya doğrudan hello@corexis.com adresinden bize ulaşın</p>
+					<p className="text-red-700 text-xs sm:text-sm mt-1">Lütfen tekrar deneyin veya doğrudan hello@corexis.com adresinden bize ulaşın</p>
 				</div>
 			)}
 
 			{/* Privacy Notice */}
-			<p className="text-sm text-gray-500 text-center">
+			<p className="text-xs sm:text-sm text-gray-500 text-center">
 				Bu formu göndererek gizlilik politikamızı kabul etmiş olursunuz. Bilgilerinizi asla üçüncü taraflarla paylaşmayacağız.
 			</p>
 		</form>

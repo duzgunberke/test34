@@ -24,6 +24,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Corexis - Empowering Collaboration",
   description: "Meet our dedicated team at Corexis, committed to excellence and innovation in everything we do.",
+  viewport: "width=device-width, initial-scale=1",
 }
 
 export default function RootLayout({
