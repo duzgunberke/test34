@@ -247,6 +247,8 @@ export default function MemberProfilePage() {
 		email: "",
 		message: "",
 	})
+	const [isSubmitting, setIsSubmitting] = useState(false)
+	const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
 
 	// Add mobile menu state (for nav similar to app/page.tsx)
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -271,12 +273,32 @@ export default function MemberProfilePage() {
 		})
 	}
 
-	const handleSubmit = (e: React.FormEvent) => {
+	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault()
-		// Handle form submission
-		console.log("Form submitted:", formData)
-		alert("Message sent successfully!")
-		setFormData({ subject: "", name: "", email: "", message: "" })
+		setIsSubmitting(true)
+		setSubmitStatus("idle")
+
+		try {
+			const response = await fetch('/api/contact', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(formData),
+			})
+
+			if (!response.ok) {
+				throw new Error('Failed to send message')
+			}
+
+			setSubmitStatus("success")
+			setFormData({ subject: "", name: "", email: "", message: "" })
+		} catch (error) {
+			console.error('Error sending message:', error)
+			setSubmitStatus("error")
+		} finally {
+			setIsSubmitting(false)
+		}
 	}
 
 	const scrollToSection = (sectionId: string) => {
@@ -527,10 +549,53 @@ export default function MemberProfilePage() {
 
 									<Button
 										type="submit"
+										disabled={isSubmitting}
 										className="w-full md:w-auto bg-gradient-corexis-primary hover:bg-gradient-corexis-accent text-white px-8 py-3 text-lg font-medium transition-all duration-300"
 									>
-										Mesaj Gönder
+										{isSubmitting ? (
+											<div className="flex items-center justify-center">
+												<div className="animate-spin rounded-full h-4 w-4 sm:h-5 sm:w-5 border-b-2 border-white mr-2"></div>
+												Mesaj Gönderiliyor...
+											</div>
+										) : (
+											"Mesaj Gönder"
+										)}
 									</Button>
+
+									{/* Status Messages */}
+									{submitStatus === "success" && (
+										<div className="p-3 sm:p-4 bg-green-50 border border-green-200 rounded-lg">
+											<div className="flex items-center">
+												<svg className="h-4 w-4 sm:h-5 sm:w-5 text-green-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+													<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+												</svg>
+												<p className="text-green-800 font-medium text-sm sm:text-base">Mesaj başarıyla gönderildi!</p>
+											</div>
+											<p className="text-green-700 text-xs sm:text-sm mt-1">24 saat içinde size geri döneceğiz.</p>
+										</div>
+									)}
+
+									{submitStatus === "error" && (
+										<div className="p-3 sm:p-4 bg-red-50 border border-red-200 rounded-lg">
+											<div className="flex items-center">
+												<svg className="h-4 w-4 sm:h-5 sm:w-5 text-red-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+													<path
+														strokeLinecap="round"
+														strokeLinejoin="round"
+														strokeWidth={2}
+														d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+													/>
+												</svg>
+												<p className="text-red-800 font-medium text-sm sm:text-base">Mesaj gönderilemedi.</p>
+											</div>
+											<p className="text-red-700 text-xs sm:text-sm mt-1">Lütfen tekrar deneyin veya doğrudan hello@corexis.com adresinden bize ulaşın</p>
+										</div>
+									)}
+
+									{/* Privacy Notice */}
+									<p className="text-xs sm:text-sm text-gray-500 text-center">
+										Bu formu göndererek gizlilik politikamızı kabul etmiş olursunuz. Bilgilerinizi asla üçüncü taraflarla paylaşmayacağız.
+									</p>
 								</form>
 							</CardContent>
 						</Card>
@@ -540,4 +605,3 @@ export default function MemberProfilePage() {
 		</div>
 	)
 }
-									
