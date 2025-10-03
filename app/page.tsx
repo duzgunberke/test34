@@ -14,24 +14,30 @@ const teamMembers = [
 		id: "berkay-duzgun",
 		name: "Berkay Düzgün",
 		role: "CEO",
-		bio: "Ölçeklenebilir mimari ve yeni teknolojiler konusunda uzmanlaşan teknoloji eksperi. Teknik yeniliklerimizi ileriye taşıyor.",
-		image: "/berkay.jpeg",
-	},
-	{
-		id: "berke-duzgun",
-		name: "Berke Düzgün",
-		role: "Danışman",
-		bio: "Stratejik planlama ve iş geliştirme alanında 10+ yıllık deneyime sahip vizyoner lider. Yenilikçi çözümler oluşturma konusunda tutkulu.",
-		image: "/berke.jpeg",
+		bio: "Merhaba, ben Berkay. ASELSAN Konya’da Elektrik-Elektronik öğrencisiyim. Aynı zamanda Corexis grubunun kurucusu ve Deneyap öğrencisiyim. Bugüne kadar birçok Deneyap şenliğinde takım kaptanı olarak yer aldım ve yönettiğim ekiplerle çeşitli dereceler elde ettim. Bunun yanı sıra, Teknofest’te yazılım ve farklı teknolojik alanlarda defalarca yarışmalara katıldım. Elektrik-elektronik, yazılım geliştirme ve yenilikçi teknolojiler üzerine çalışıyor; özellikle sensör sistemleri, gömülü yazılımlar ve otomasyon odaklı projeler geliştiriyorum. Takım çalışmasına uyumlu, araştırmaya meraklı ve problem çözme odaklı biriyim. Hedefim; teknoloji ve mühendisliği birleştirerek, hem akademik hem de profesyonel hayatta yenilikçi çözümler üreten bir mühendis olmak.",
+		image: "/berkay.jpg",
 	},
   	{
-		id: "berke-duzgun-2",
+		id: "erva-evin-iltus",
+		name: "Erva Evin İltuş",
+		role: "CTO",
+		bio: "Merhaba, ben Erva Evin İltuş. Meram Fen Lisesi öğrencisiyim. Aynı zamanda Deneyap öğrencisi ve Corexis grubunun bir üyesiyim. Katıldığım proje şenliklerinde takım arkadaşlarımla birlikte birçok derece elde ettim. Şu anda ağırlıklı olarak proje planlama ve sunum alanlarında görev alıyor, ekip çalışmalarında aktif bir rol üstleniyorum. Hayalim, gelecekte uzay ve havacılık alanında çalışmalar yaparak hem ülkeme hem de dünyaya katkılar sunmak. Bu doğrultuda, araştırmaya, öğrenmeye ve ekip çalışmasına büyük önem veriyorum.",
+		image: "/ervaevin.jpg",
+	},
+	{
+		id: "zeynep-ileri",
+		name: "Zeynep İleri",
+		role: "CTO",
+		bio: "Merhaba, ben Zeynep İleri. Geleceği sadece izlemek değil, onu şekillendirmek istiyorum. Şehir Koleji'nde eğitimime devam eden bir öğrenci olarak yapay zeka mühendisliği hedefiyle kendimi sürekli geliştirmeye odaklanıyorum. Teknolojiye olan ilgim, beni algoritmalar, veri bilimi ve makine öğrenimi gibi alanlarda derinleşmeye yönlendirdi. Her gün yeni şeyler öğrenmeye, problem çözme becerilerimi geliştirmeye ve geleceğin teknolojilerine katkı sunacak projelerde yer almaya istekliyim. Amacım, yalnızca bir mühendis olmak değil; aynı zamanda çözüm üreten, fayda sağlayan ve ilham veren bir teknoloji profesyoneli olmak.",
+		image: "/zeynepileri.jpg",
+	},
+   {
+		id: "berke-duzgun",
 		name: "Berke Düzgün",
-		role: "Danışman",
-		bio: "Stratejik planlama ve iş geliştirme alanında 10+ yıllık deneyime sahip vizyoner lider. Yenilikçi çözümler oluşturma konusunda tutkulu.",
+		role: "Advisor",
+		bio: "Ben Berke Düzgün. Elektronik ve Haberleşme Mühendisliği altyapısını yazılım geliştirme tutkumla birleştirerek kariyerimi Full Stack Development, MLOps ve yapay zekâ çözümleri üzerine inşa ediyorum. Profesyonel deneyimlerim boyunca; sağlık, finans, seyahat ve etkinlik teknolojileri gibi farklı sektörlerde .NET Core, TypeScript, ASP.NET, Docker, RabbitMQ, DDD ve mikroservis mimarileri ile ölçeklenebilir projeler geliştirdim. Hem frontend hem de backend tarafında üretken çözümler ortaya koyarken; ödeme altyapıları, batch sistemleri ve yapay zekâ tabanlı Ar-Ge projelerine katkı sağladım. Aynı zamanda Viveven girişimini kurarak özel yazılım çözümleri ürettim; burada geliştirdiğimiz ürünlerle (VivEvent, Linayzer, VivModel) kullanıcı odaklı ve yenilikçi uygulamalar ortaya koyduk. Teknik becerilerimin yanında, T3 Vakfı’nda mentorluk yaparak gençlere elektronik ve yazılım alanında rehberlik ettim. Bu süreç, bilgi paylaşımının ve ekip ruhunun ne kadar değerli olduğunu bana bir kez daha gösterdi. Yeni teknolojileri yakından takip ediyor, hem kurumsal hem de girişimsel bakış açısıyla değer üretmeye devam ediyorum.",
 		image: "/berke.jpeg",
 	},
-
 ]
 
 // Blog posts data for the updates section
