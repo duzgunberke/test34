@@ -540,7 +540,7 @@ export default function HomePage() {
 										<Linkedin className="h-5 w-5" />
 									</a>
 									<a
-										href="https://www.berkayduzgun42@gmail.com"
+										href="mailto:berkayduzgun42@gmail.com"
 										className="w-10 h-10 bg-white/10 hover:bg-gradient-corexis-primary text-white rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
 									>
 										<Mail className="h-5 w-5" />
@@ -599,8 +599,8 @@ export default function HomePage() {
 										</svg>
 										<div>
 											<p className="text-gray-300 text-sm sm:text-base">
-												Teknoloji Caddesi No: 123<br />
-												Levent, İstanbul 34394
+												Kapsül Teknoloji Platformu<br />
+												Konya / Meram
 											</p>
 										</div>
 									</div>
