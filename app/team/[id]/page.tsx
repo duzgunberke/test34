@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin, Calendar, Building } from "lucide-react"
+import { Mail, MapPin, Calendar, Building } from "lucide-react"
 
 // Extended team data with experience information
 const teamMembers = [
@@ -18,7 +18,6 @@ const teamMembers = [
 		role: "CEO",
 		bio: "Merhaba, ben Berkay. ASELSAN Konya’da Elektrik-Elektronik öğrencisiyim. Aynı zamanda Corexis grubunun kurucusu ve Deneyap öğrencisiyim. Bugüne kadar birçok Deneyap şenliğinde takım kaptanı olarak yer aldım ve yönettiğim ekiplerle çeşitli dereceler elde ettim. Bunun yanı sıra, Teknofest’te yazılım ve farklı teknolojik alanlarda defalarca yarışmalara katıldım. Elektrik-elektronik, yazılım geliştirme ve yenilikçi teknolojiler üzerine çalışıyor; özellikle sensör sistemleri, gömülü yazılımlar ve otomasyon odaklı projeler geliştiriyorum. Takım çalışmasına uyumlu, araştırmaya meraklı ve problem çözme odaklı biriyim. Hedefim; teknoloji ve mühendisliği birleştirerek, hem akademik hem de profesyonel hayatta yenilikçi çözümler üreten bir mühendis olmak.",
 		email: "berkayduzgun42@gmail.com",
-		phone: "+90 541 887 48 64",
 		location: "Konya | Türkiye",
 		image: "/berkay.jpg",
 		fullBio:
@@ -62,177 +61,113 @@ const teamMembers = [
 		],
 	},
 	{
-		id: "michael-chen",
-		name: "Michael Chen",
+		id: "erva-evin-iltus",
+		name: "Erva Evin İltuş",
 		role: "CTO",
-		bio: "Technology expert specializing in scalable architecture and emerging technologies. Drives our technical innovation forward with cutting-edge solutions.",
-		email: "michael@teamlogo.com",
-		phone: "+1 (555) 234-5678",
-		location: "Seattle, WA",
-		image: "/team-michael-chen.png",
+		bio: "Merhaba, ben Erva Evin İltuş. Meram Fen Lisesi öğrencisiyim. Aynı zamanda Deneyap öğrencisi ve Corexis grubunun bir üyesiyim. Katıldığım proje şenliklerinde takım arkadaşlarımla birlikte birçok derece elde ettim. Şu anda ağırlıklı olarak proje planlama ve sunum alanlarında görev alıyor, ekip çalışmalarında aktif bir rol üstleniyorum. Hayalim, gelecekte uzay ve havacılık alanında çalışmalar yaparak hem ülkeme hem de dünyaya katkılar sunmak. Bu doğrultuda, araştırmaya, öğrenmeye ve ekip çalışmasına büyük önem veriyorum.",
+		email: "ervaevin@gmail.com",
+		
+		location: "Konya | Türkiye",
+		image: "/ervaevin.jpg",
 		fullBio:
-			"Michael is a seasoned technology leader with expertise in building scalable systems and implementing emerging technologies. He has a proven track record of leading engineering teams and delivering complex technical solutions. His deep understanding of cloud architecture, AI/ML, and modern development practices makes him instrumental in driving our technical strategy forward.",
+			"Merhaba, ben Erva Evin İltuş. Meram Fen Lisesi öğrencisiyim. Aynı zamanda Deneyap öğrencisi ve Corexis grubunun bir üyesiyim. Katıldığım proje şenliklerinde takım arkadaşlarımla birlikte birçok derece elde ettim. Şu anda ağırlıklı olarak proje planlama ve sunum alanlarında görev alıyor, ekip çalışmalarında aktif bir rol üstleniyorum. Hayalim, gelecekte uzay ve havacılık alanında çalışmalar yaparak hem ülkeme hem de dünyaya katkılar sunmak. Bu doğrultuda, araştırmaya, öğrenmeye ve ekip çalışmasına büyük önem veriyorum.",
 		experiences: [
 			{
-				company: "TeamLogo",
+				company: "Corexis",
 				role: "CTO",
-				duration: "2021 - Present",
+				duration: "2025 Temmuz - Halen",
 				description:
-					"Lead technical strategy and engineering teams. Architected scalable cloud infrastructure serving 1M+ users with 99.9% uptime.",
+					"Corexis'te CTO olarak, yeni nesil uzay araçları ve ileri teknoloji sistemlerinin geliştirilmesinden sorumluyum. Şirketin teknoloji vizyonunu belirleyerek, Ar-Ge süreçlerini yönetiyor ve çok disiplinli mühendislik ekipleriyle birlikte ölçeklenebilir ve geleceğe dönük çözümler üretiyoruz. Havacılık, yazılım ve üretim alanındaki uzmanlarla yakın iş birliği içinde çalışarak, uzay teknolojileri alanında sınırları zorlayan projelere liderlik ediyorum.",
 			},
 			{
-				company: "CloudTech Solutions",
-				role: "Senior Engineering Manager",
-				duration: "2018 - 2021",
+				company: "Meram Fen Lisesi",
+				role: "Öğrenci",
+				duration: "2023 Eylül - Halen",
 				description:
-					"Managed a team of 15 engineers building enterprise cloud solutions. Implemented DevOps practices that reduced deployment time by 80%.",
+					"",
 			},
 			{
-				company: "StartupXYZ",
-				role: "Lead Developer",
-				duration: "2015 - 2018",
+				company: "Deneyap Türkiye",
+				role: "Öğrenci",
+				duration: "2024 Eylül - Halen",
 				description:
-					"Built the core platform from ground up using modern web technologies. Scaled the system to handle 10x traffic growth during rapid expansion.",
+					"",
 			},
 		],
 	},
 	{
-		id: "emily-rodriguez",
-		name: "Emily Rodriguez",
-		role: "Head of Design",
-		bio: "Creative director with expertise in user experience and brand identity. Creates compelling visual narratives that resonate with users.",
-		email: "emily@teamlogo.com",
-		phone: "+1 (555) 345-6789",
-		location: "Austin, TX",
-		image: "/team-emily-rodriguez.png",
+		id: "zeynep-ileri",
+		name: "Zeynep İleri",
+		role: "CTO",
+		bio: "Geleceği sadece izlemek değil, onu şekillendirmek istiyorum. Şehir Koleji'nde eğitimime devam eden bir öğrenci olarak yapay zeka mühendisliği hedefiyle kendimi sürekli geliştirmeye odaklanıyorum. Teknolojiye olan ilgim, beni algoritmalar, veri bilimi ve makine öğrenimi gibi alanlarda derinleşmeye yönlendirdi. Her gün yeni şeyler öğrenmeye, problem çözme becerilerimi geliştirmeye ve geleceğin teknolojilerine katkı sunacak projelerde yer almaya istekliyim. Amacım, yalnızca bir mühendis olmak değil; aynı zamanda çözüm üreten, fayda sağlayan ve ilham veren bir teknoloji profesyoneli olmak.",
+		email: "zeynepileri@gmail.com",
+		
+		location: "Konya | Türkiye",
+		image: "/zeynepileri.jpg",
 		fullBio:
-			"Emily is a creative visionary who leads our design team with passion and expertise. Her background in both digital and traditional design allows her to create cohesive brand experiences across all touchpoints. She believes in human-centered design and has a talent for translating complex ideas into intuitive, beautiful interfaces.",
+			"Geleceği sadece izlemek değil, onu şekillendirmek istiyorum. Şehir Koleji'nde eğitimime devam eden bir öğrenci olarak yapay zeka mühendisliği hedefiyle kendimi sürekli geliştirmeye odaklanıyorum. Teknolojiye olan ilgim, beni algoritmalar, veri bilimi ve makine öğrenimi gibi alanlarda derinleşmeye yönlendirdi. Her gün yeni şeyler öğrenmeye, problem çözme becerilerimi geliştirmeye ve geleceğin teknolojilerine katkı sunacak projelerde yer almaya istekliyim. Amacım, yalnızca bir mühendis olmak değil; aynı zamanda çözüm üreten, fayda sağlayan ve ilham veren bir teknoloji profesyoneli olmak.",
 		experiences: [
 			{
-				company: "TeamLogo",
-				role: "Head of Design",
-				duration: "2020 - Present",
+				company: "Corexis",
+				role: "CTO",
+				duration: "2025 Temmuz - Halen",
 				description:
-					"Lead design strategy and creative direction for all products. Established design system used across 20+ products, improving consistency by 90%.",
+					"Corexis’te CTO olarak, şirketin teknolojik vizyonunu şekillendiriyor ve geliştirdiğimiz projelerin teknik altyapısına yön veriyorum. Ar-Ge süreçlerini koordine ediyor, ekibimizin yapay zekâ, otonom sistemler ve ileri mühendislik çalışmalarında yenilikçi çözümler üretmesini sağlıyorum. Amacım, sadece bugünün ihtiyaçlarına cevap veren değil, geleceğin teknolojilerine de yön verecek sistemler ortaya koymak.",
 			},
 			{
-				company: "Design Studio Pro",
-				role: "Senior UX Designer",
-				duration: "2017 - 2020",
+				company: "Konya Şehir Koleji",
+				role: "Öğrenci",
+				duration: "2024 Eylül - Halen",
 				description:
-					"Designed user experiences for B2B SaaS products. Led redesign project that increased user engagement by 60% and reduced support tickets by 40%.",
+					"",
 			},
 			{
-				company: "Creative Agency Inc.",
-				role: "Visual Designer",
-				duration: "2014 - 2017",
+				company: "Deneyap Türkiye",
+				role: "Öğrenci",
+				duration: "2024 Eylül - Halen",
 				description:
-					"Created brand identities and marketing materials for diverse clients. Managed multiple projects simultaneously while maintaining high quality standards.",
+					"",
 			},
 		],
 	},
 	{
-		id: "david-kim",
-		name: "David Kim",
-		role: "Lead Developer",
+		id: "berke-duzgun",
+		name: "Berke Düzgün",
+		role: "Advisor",
 		bio: "Full-stack developer passionate about clean code and performance optimization. Builds robust, scalable solutions that power our platform.",
-		email: "david@teamlogo.com",
-		phone: "+1 (555) 456-7890",
-		location: "New York, NY",
-		image: "/team-david-kim.png",
-		fullBio:
-			"David is a skilled full-stack developer who brings technical excellence to every project. His expertise spans modern web technologies, database optimization, and system architecture. He's passionate about writing clean, maintainable code and mentoring junior developers to help them grow their skills.",
+		email: "duzgunberke@gmail.com",
+		
+		location: "Konya | Türkiye",
+		image: "/berke.jpeg",
+		fullBio:"Ben Berke Düzgün. Elektronik ve Haberleşme Mühendisliği altyapısını yazılım geliştirme tutkumla birleştirerek kariyerimi Full Stack Development, MLOps ve yapay zekâ çözümleri üzerine inşa ediyorum. Profesyonel deneyimlerim boyunca; sağlık, finans, seyahat ve etkinlik teknolojileri gibi farklı sektörlerde .NET Core, TypeScript, ASP.NET, Docker, RabbitMQ, DDD ve mikroservis mimarileri ile ölçeklenebilir projeler geliştirdim. Hem frontend hem de backend tarafında üretken çözümler ortaya koyarken; ödeme altyapıları, batch sistemleri ve yapay zekâ tabanlı Ar-Ge projelerine katkı sağladım. Aynı zamanda Viveven girişimini kurarak özel yazılım çözümleri ürettim; burada geliştirdiğimiz ürünlerle (VivEvent, Linayzer, VivModel) kullanıcı odaklı ve yenilikçi uygulamalar ortaya koyduk. Teknik becerilerimin yanında, T3 Vakfı’nda mentorluk yaparak gençlere elektronik ve yazılım alanında rehberlik ettim. Bu süreç, bilgi paylaşımının ve ekip ruhunun ne kadar değerli olduğunu bana bir kez daha gösterdi. Yeni teknolojileri yakından takip ediyor, hem kurumsal hem de girişimsel bakış açısıyla değer üretmeye devam ediyorum.",
 		experiences: [
 			{
-				company: "TeamLogo",
-				role: "Lead Developer",
-				duration: "2021 - Present",
+				company: "Corexis",
+				role: "Advisor",
+				duration: "2025 Temmuz - Halen",
 				description:
-					"Lead development of core platform features. Implemented performance optimizations that improved page load times by 50% and reduced server costs by 30%.",
+					"Corexis’te danışman olarak görev alıyorum. Ekip içerisindeki teknik karar süreçlerine, stratejik yönlendirmelere ve ürün geliştirme vizyonuna katkı sağlıyorum. Özellikle yazılım mimarisi, yapay zekâ uygulamaları ve ürün ölçeklendirme konularında bilgi birikimimle ekibe rehberlik ediyorum. Danışmanlık rolüm kapsamında; teknolojik yol haritasının oluşturulmasına destek veriyor, genç ekibin proje yönetimi ve Ar-Ge çalışmalarında mentorluk yapıyorum. Amacım, Corexis’in uzun vadeli hedeflerine ulaşmasında teknik bilgi ve deneyimimle stratejik bir bakış açısı kazandırmak.",
 			},
 			{
-				company: "WebDev Corp",
-				role: "Senior Full-Stack Developer",
-				duration: "2018 - 2021",
+				company: "Innovance Consultancy",
+				role: "Software Developer",
+				duration: "2024 Şubat - Halen",
 				description:
-					"Developed and maintained multiple web applications using React, Node.js, and PostgreSQL. Mentored 5 junior developers and established code review processes.",
+					"I worked as a backend developer in ticket and travel applications, focusing on provider-based operations, backoffice systems, web development, and integrations. I developed both the frontend and backend of the GSYIAD backoffice panel for the Galatasaray Board of Directors. I worked in batch systems and payment infrastructures within SIBS. Additionally, I contributed to R&D projects, working in various areas of artificial intelligence.",
 			},
 			{
-				company: "Freelance",
-				role: "Web Developer",
-				duration: "2016 - 2018",
+				company: "Acıbadem Technology",
+				role: "Software Developer",
+				duration: "2023 Şubat - 2024 Şubat",
 				description:
-					"Built custom web solutions for small businesses and startups. Delivered 20+ projects on time and within budget while maintaining long-term client relationships.",
-			},
-		],
-	},
-	{
-		id: "lisa-thompson",
-		name: "Lisa Thompson",
-		role: "Marketing Director",
-		bio: "Strategic marketer with deep expertise in digital campaigns and brand growth. Amplifies our message globally through innovative marketing strategies.",
-		email: "lisa@teamlogo.com",
-		phone: "+1 (555) 567-8901",
-		location: "Los Angeles, CA",
-		image: "/team-lisa-thompson.png",
-		fullBio:
-			"Lisa is a results-driven marketing professional who has built her career on creating compelling campaigns that drive growth. Her expertise in digital marketing, content strategy, and brand development has helped numerous companies achieve their marketing goals. She's passionate about data-driven marketing and staying ahead of industry trends.",
-		experiences: [
-			{
-				company: "TeamLogo",
-				role: "Marketing Director",
-				duration: "2020 - Present",
-				description:
-					"Developed and executed marketing strategies that increased brand awareness by 200% and generated 150% growth in qualified leads.",
+					"We develop applications for international hospitals and health chains. (Cerebral Plus)",
 			},
 			{
-				company: "Growth Marketing Agency",
-				role: "Senior Marketing Manager",
-				duration: "2017 - 2020",
+				company: "T3 Vakfı ",
+				role: "Mentor",
+				duration: "2022 Mart - 2022 Aralık",
 				description:
-					"Managed marketing campaigns for B2B SaaS clients. Achieved average 40% increase in conversion rates through A/B testing and optimization.",
-			},
-			{
-				company: "Digital Solutions Inc.",
-				role: "Marketing Specialist",
-				duration: "2015 - 2017",
-				description:
-					"Executed multi-channel marketing campaigns including email, social media, and content marketing. Increased organic traffic by 300% over 2 years.",
-			},
-		],
-	},
-	{
-		id: "james-wilson",
-		name: "James Wilson",
-		role: "Operations Manager",
-		bio: "Operations specialist focused on process optimization and team efficiency. Ensures seamless project delivery and operational excellence.",
-		email: "james@teamlogo.com",
-		phone: "+1 (555) 678-9012",
-		location: "Chicago, IL",
-		image: "/team-james-wilson.png",
-		fullBio:
-			"James is an operations expert who ensures our team runs like a well-oiled machine. His background in process improvement and project management helps us deliver exceptional results consistently. He's passionate about creating efficient workflows and fostering a collaborative team environment.",
-		experiences: [
-			{
-				company: "TeamLogo",
-				role: "Operations Manager",
-				duration: "2021 - Present",
-				description:
-					"Streamlined operations processes resulting in 35% improvement in project delivery times. Implemented project management tools used by 100+ team members.",
-			},
-			{
-				company: "Efficiency Consulting",
-				role: "Senior Operations Consultant",
-				duration: "2018 - 2021",
-				description:
-					"Helped mid-size companies optimize their operations. Led process improvement initiatives that reduced operational costs by average of 25%.",
-			},
-			{
-				company: "Manufacturing Corp",
-				role: "Process Improvement Specialist",
-				duration: "2015 - 2018",
-				description:
-					"Analyzed and optimized manufacturing processes. Implemented lean methodologies that increased productivity by 30% and reduced waste by 20%.",
+					"I helped high school friends to control electronics components using Python language to prepare for a nationwide competition. And as the final product, we created a robot that allows them to avoid obstacles and lift and carry the object in front of them.",
 			},
 		],
 	},
@@ -411,10 +346,6 @@ export default function MemberProfilePage() {
 								<div className="flex items-center text-gray-600">
 									<Mail className="h-4 w-4 mr-3 text-[#7B1FA2]" />
 									<span className="text-sm">{member.email}</span>
-								</div>
-								<div className="flex items-center text-gray-600">
-									<Phone className="h-4 w-4 mr-3 text-[#7B1FA2]" />
-									<span className="text-sm">{member.phone}</span>
 								</div>
 								<div className="flex items-center text-gray-600">
 									<MapPin className="h-4 w-4 mr-3 text-[#7B1FA2]" />
