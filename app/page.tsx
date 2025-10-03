@@ -40,8 +40,8 @@ const teamMembers = [
 	},
 ]
 
-// Blog posts data for the updates section
-const blogPosts = [
+// Original blog posts data kept for reference
+const originalBlogPosts = [
 	{
 		id: "yapay-zeka-gunluk-hayat",
 		title: "Yapay Zeka Günlük Hayatımızı Nasıl Değiştiriyor?",
@@ -76,6 +76,9 @@ const blogPosts = [
 		category: "İş Stratejisi",
 	},
 ]
+
+// Active blog posts (currently empty to hide them)
+const blogPosts = [] as typeof originalBlogPosts
 
 export default function HomePage() {
 	const [activeSection, setActiveSection] = useState("hero")
@@ -228,7 +231,7 @@ export default function HomePage() {
 					<div className="text-center mb-12 sm:mb-16">
 						<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 font-serif">Hakkımızda</h2>
 						<p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
-							İşbirliği, yenilikçilik ve mükemmelliğe olan sarsılmaz bağlılığımız aracılığıyla olağanüstü sonuçlar sunmaya adanmış dinamik bir profesyoneller ekibiyiz.
+							Corexis, geleceğin teknolojilerini bugünden şekillendirmeyi amaçlayan yenilikçi bir araştırma ve geliştirme ekibidir. Yapay zekâ, otonom sistemler, savunma ve uzay teknolojileri başta olmak üzere ileri mühendislik alanlarında çözümler geliştirerek, hem ulusal hem de uluslararası ölçekte fark yaratan projeler üretmeyi hedefliyoruz.
 						</p>
 					</div>
 
@@ -244,14 +247,13 @@ export default function HomePage() {
 							<div>
 								<h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-3 font-serif">Hikayemiz</h3>
 								<p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-									Ekiplerin nasıl işbirliği yaptığını ve hedeflerine nasıl ulaştığını dönüştürme vizyonuyla kurulmuş olan şirketimiz, yenilikçi çözümler ve olağanüstü hizmet sunumu arayan organizasyonlar için güvenilir bir partner haline gelmiştir.
+									Corexis, teknolojiye olan tutkunun genç ve dinamik bir vizyonla birleşmesiyle doğdu. Başlangıçta küçük bir fikir topluluğu olarak başlayan yolculuğumuz, bugün farklı disiplinlerden gelen yeteneklerin bir araya gelerek yenilikçi projelere imza attığı bir teknoloji merkezine dönüştü. Bizim için her proje, geleceğe bırakılan güçlü bir izdir.
 								</p>
 							</div>
 							<div>
 								<h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-3 font-serif">Önemli Olan Deneyim</h3>
 								<p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-									Farklı sektörlerde{" "}
-									<span className="font-semibold text-blue-600">15 yılı</span> aşan birleşik deneyimimizle, ekibimiz üstlendiğimiz her projeye derin uzmanlık ve yeni perspektifler getiriyor.
+									Corexis ekibi, farklı mühendislik alanlarından gelen uzmanlıkları bir araya getirerek kısa sürede önemli bir birikim oluşturdu. Savunma ve teknoloji odaklı yarışmalarda, AR-GE projelerinde ve inovasyon odaklı çalışmalarda kazandığımız deneyim, bize yalnızca teknik bir derinlik değil aynı zamanda stratejik bir bakış açısı kazandırdı.
 								</p>
 							</div>
 						</div>
@@ -262,7 +264,7 @@ export default function HomePage() {
 							<CardContent className="p-0">
 								<h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4 font-serif">Misyonumuz</h3>
 								<p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-									Yenilikçi çözümler sunarak, işbirliğini teşvik ederek ve sürdürülebilir büyüme ve başarıyı yönlendiren olağanüstü sonuçlar sunarak ekipleri ve organizasyonları güçlendirmek.
+									Misyonumuz; ileri teknolojileri kullanarak sürdürülebilir, güvenilir ve yenilikçi çözümler üretmek, geliştirdiğimiz projelerle yalnızca bugünün değil yarının ihtiyaçlarına da yanıt verebilmektir. Corexis, teknoloji ve bilimin kesişim noktasında daima daha iyisini üretmeyi amaçlar.
 								</p>
 							</CardContent>
 						</Card>
@@ -271,25 +273,21 @@ export default function HomePage() {
 							<CardContent className="p-0">
 								<h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4 font-serif">Hedeflerimiz</h3>
 								<p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-									Yaptığımız her işte kalite, dürüstlük ve müşteri memnuniyetine olan bağlılığımızı korurken sürekli yenilik yapmak, uzmanlığımızı genişletmek ve kalıcı ortaklıklar kurmak.
+									Corexis olarak hedefimiz; ulusal ve uluslararası alanda teknoloji geliştiren öncü bir ekip haline gelmek, ürettiğimiz projelerle küresel ölçekte fark yaratmak ve Türkiye’nin teknoloji ekosistemine güçlü bir katkı sunmaktır. Kalıcı iş birlikleri kurarak, genç mühendislerin ve araştırmacıların gelişimini destekleyerek, geleceği birlikte inşa etmeyi amaçlıyoruz.
 								</p>
 							</CardContent>
 						</Card>
 					</div>
 
 					<div className="mt-12 lg:mt-16 text-center">
-						<div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-8">
+						<div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-8 max-w-3xl mx-auto">
 							<div className="text-center">
-								<div className="text-2xl sm:text-3xl font-bold text-[#7B1FA2] mb-2">15+</div>
+								<div className="text-2xl sm:text-3xl font-bold text-[#7B1FA2] mb-2">2+</div>
 								<div className="text-gray-600 text-sm sm:text-base">Yıllık Deneyim</div>
 							</div>
 							<div className="text-center">
-								<div className="text-2xl sm:text-3xl font-bold text-[#9C27B0] mb-2">100+</div>
+								<div className="text-2xl sm:text-3xl font-bold text-[#9C27B0] mb-2">30+</div>
 								<div className="text-gray-600 text-sm sm:text-base">Tamamlanan Proje</div>
-							</div>
-							<div className="text-center">
-								<div className="text-2xl sm:text-3xl font-bold text-[#E040FB] mb-2">50+</div>
-								<div className="text-gray-600 text-sm sm:text-base">Mutlu Müşteri</div>
 							</div>
 							<div className="text-center">
 								<div className="text-2xl sm:text-3xl font-bold text-[#F06292] mb-2">24/7</div>
@@ -460,27 +458,13 @@ export default function HomePage() {
 									</div>
 									<div>
 										<h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-1">E-posta Gönderin</h4>
-										<p className="text-gray-600 text-sm sm:text-base">hello@corexis.com</p>
+										<p className="text-gray-600 text-sm sm:text-base">info@corexis.com</p>
 										<p className="text-xs sm:text-sm text-gray-500">24 saat içinde yanıt vereceğiz</p>
 									</div>
 								</div>
 
 								<div className="flex items-start space-x-4">
-									<div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-pink-100 rounded-lg flex items-center justify-center">
-										<svg className="h-5 w-5 sm:h-6 sm:w-6 text-[#E040FB]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-											<path
-												strokeLinecap="round"
-												strokeLinejoin="round"
-												strokeWidth={2}
-												d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-											/>
-										</svg>
-									</div>
-									<div>
-										<h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-1">Bizi Arayın</h4>
-										<p className="text-gray-600 text-sm sm:text-base">+90 (212) 555-0123</p>
-										<p className="text-xs sm:text-sm text-gray-500">Pzt-Cum, 09:00-18:00</p>
-									</div>
+		
 								</div>
 
 								<div className="flex items-start space-x-4">
@@ -502,8 +486,8 @@ export default function HomePage() {
 									</div>
 									<div>
 										<h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-1">Ziyaret Edin</h4>
-										<p className="text-gray-600 text-sm sm:text-base">Teknoloji Caddesi No: 123</p>
-										<p className="text-gray-600 text-sm sm:text-base">Levent, İstanbul 34394</p>
+										<p className="text-gray-600 text-sm sm:text-base">Kapsül Teknoloji Platformu</p>
+										<p className="text-gray-600 text-sm sm:text-base">Konya / Meram</p>
 										<p className="text-xs sm:text-sm text-gray-500">Sadece randevu ile</p>
 									</div>
 								</div>
@@ -514,24 +498,10 @@ export default function HomePage() {
 								<h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-4">Bizi Takip Edin</h4>
 								<div className="flex space-x-4">
 									<a
-										href="#"
-										className="w-10 h-10 bg-gradient-corexis-primary text-white rounded-lg flex items-center justify-center hover:bg-gradient-corexis-accent transition-all duration-200"
-									>
-										<Twitter className="h-5 w-5" />
-									</a>
-									<a
-										href="#"
+										href="https://www.linkedin.com/company/corexisoffical/"
 										className="w-10 h-10 bg-gradient-corexis-primary text-white rounded-lg flex items-center justify-center hover:bg-gradient-corexis-accent transition-all duration-200"
 									>
 										<Linkedin className="h-5 w-5" />
-									</a>
-									<a
-										href="#"
-										className="w-10 h-10 bg-gradient-corexis-primary text-white rounded-lg flex items-center justify-center hover:bg-gradient-corexis-accent transition-all duration-200"
-									>
-										<svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-											<path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.097.118.112.221.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.017z" />
-										</svg>
 									</a>
 								</div>
 							</div>
@@ -564,19 +534,13 @@ export default function HomePage() {
 								</div>
 								<div className="flex space-x-4">
 									<a
-										href="#"
-										className="w-10 h-10 bg-white/10 hover:bg-gradient-corexis-primary text-white rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
-									>
-										<Twitter className="h-5 w-5" />
-									</a>
-									<a
-										href="#"
+										href="https://www.linkedin.com/company/corexisoffical/"
 										className="w-10 h-10 bg-white/10 hover:bg-gradient-corexis-primary text-white rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
 									>
 										<Linkedin className="h-5 w-5" />
 									</a>
 									<a
-										href="#"
+										href="https://www.berkayduzgun42@gmail.com"
 										className="w-10 h-10 bg-white/10 hover:bg-gradient-corexis-primary text-white rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
 									>
 										<Mail className="h-5 w-5" />
@@ -624,17 +588,10 @@ export default function HomePage() {
 									<div className="flex items-start space-x-3">
 										<Mail className="h-5 w-5 text-[#E040FB] mt-0.5 flex-shrink-0" />
 										<div>
-											<p className="text-gray-300 text-sm sm:text-base">hello@corexis.com</p>
+											<p className="text-gray-300 text-sm sm:text-base">info@corexis.com</p>
 										</div>
 									</div>
-									<div className="flex items-start space-x-3">
-										<svg className="h-5 w-5 text-[#E040FB] mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-											<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-										</svg>
-										<div>
-											<p className="text-gray-300 text-sm sm:text-base">+90 (212) 555-0123</p>
-										</div>
-									</div>
+									
 									<div className="flex items-start space-x-3">
 										<svg className="h-5 w-5 text-[#E040FB] mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 											<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
