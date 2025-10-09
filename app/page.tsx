@@ -5,7 +5,7 @@ import type React from "react"
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Mail, Calendar, Clock, ArrowRight, Twitter, Linkedin } from "lucide-react"
+import { Mail, Calendar, Clock, ArrowRight, Twitter, Linkedin, Instagram } from "lucide-react"
 import { useRouter } from "next/navigation"
 
 // Team data
@@ -43,42 +43,21 @@ const teamMembers = [
 // Original blog posts data kept for reference
 const originalBlogPosts = [
 	{
-		id: "yapay-zeka-gunluk-hayat",
-		title: "Yapay Zeka Günlük Hayatımızı Nasıl Değiştiriyor?",
+		id: "nasaspaceappschallenge",
+		title: "NASA Space Apps Challenge: 48 Saatlik Uzay Macerası",
 		excerpt:
-			"Yapay zekanın günlük yaşamımızdaki etkilerini keşfedin: akıllı asistanlardan kişiselleştirilmiş önerilere, sağlıktan eğitime kadar her alanda nasıl devrim yarattığını öğrenin.",
-		coverImage: "/blog-yapay-zeka.jpg",
-		author: "Ayşe Yılmaz",
-		date: "2024-02-10",
+			"Geçtiğimiz hafta sonu Corexis ekibiyle birlikte Konya Kapsül'de bir maceranın içindeydik. NASA Space Apps Challenge 2025 - dünyanın en büyük hackathonu. 40'a yakın üniversiteli takım, 48 saat boyunca uzay ve Dünya için çözümler üretmeye çalışıyordu. Biz de onlardan biriydik.",
+		coverImage: "/kapakresmiblogbir.jpg",
+		author: "Berkay Düzgün",
+		date: "2025-10-5",
 		readTime: "6 dk okuma",
-		category: "Teknoloji",
+		category: "Teknoloji | Yarışma",
 	},
-	{
-		id: "modern-web-gelistirme",
-		title: "Modern Web Geliştirme: 2024 Trendleri ve En İyi Uygulamalar",
-		excerpt:
-			"React, Next.js ve TypeScript ile modern web uygulamaları geliştirmenin inceliklerini keşfedin. Performans, güvenlik ve kullanıcı deneyimi için en iyi stratejileri öğrenin.",
-		coverImage: "/blog-web-gelistirme.jpg",
-		author: "Mehmet Kaya",
-		date: "2024-02-05",
-		readTime: "8 dk okuma",
-		category: "Yazılım Geliştirme",
-	},
-	{
-		id: "dijital-donusum-stratejileri",
-		title: "Şirketler İçin Dijital Dönüşüm Rehberi",
-		excerpt:
-			"İşletmenizi dijital çağa taşıyın. Başarılı dijital dönüşüm için stratejiler, yaygın tuzaklar ve gerçek dünya örnekleriyle kapsamlı bir rehber.",
-		coverImage: "/blog-dijital-donusum.jpg",
-		author: "Zeynep Arslan",
-		date: "2024-01-28",
-		readTime: "7 dk okuma",
-		category: "İş Stratejisi",
-	},
+	
 ]
 
 // Active blog posts (currently empty to hide them)
-const blogPosts = [] as typeof originalBlogPosts
+const blogPosts = originalBlogPosts // Use original posts instead of empty array
 
 export default function HomePage() {
 	const [activeSection, setActiveSection] = useState("hero")
@@ -209,9 +188,9 @@ export default function HomePage() {
 				<div className="absolute inset-0 bg-gradient-corexis opacity-5"></div>
 				<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
 					<h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-4 sm:mb-6 font-serif leading-tight animate-fade-in">
-						İşbirliğini Güçlendiriyor,
+						Teknolojiyi Yeniden Tanımlıyor,
 						<br />
-						<span className="text-gradient-corexis">Başarıyı Yönlendiriyoruz</span>
+						<span className="text-gradient-corexis">Geleceği Şekillendiriyoruz.</span>
 					</h1>
 					<p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed px-4">
 						Yaptığımız her işte mükemmellik ve yenilikçiliğe bağlı olan özel ekibimizle tanışın.
@@ -238,7 +217,7 @@ export default function HomePage() {
 					<div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center mb-12 lg:mb-16">
 						<div className="order-2 md:order-1">
 							<img
-								src="/professional-team-collaboration.png"
+								src="/corexishakkımızda.jpg"
 								alt="Our team collaborating"
 								className="rounded-lg shadow-lg w-full h-auto"
 							/>
@@ -392,9 +371,9 @@ export default function HomePage() {
 											<div className="flex items-center">
 												<Calendar className="h-3 w-3 sm:h-4 sm:w-4 mr-2" />
 												<span>
-													{new Date(post.date).toLocaleDateString("en-US", {
+													{new Date(post.date).toLocaleDateString("tr-TR", {
 														year: "numeric",
-														month: "short",
+														month: "long",
 														day: "numeric",
 													})}
 												</span>
@@ -406,9 +385,9 @@ export default function HomePage() {
 										</div>
 
 										<div className="flex items-center justify-between">
-											<span className="text-xs sm:text-sm text-gray-600">By {post.author}</span>
+											<span className="text-xs sm:text-sm text-gray-600">{post.author}</span>
 											<div className="flex items-center text-[#7B1FA2] group-hover:text-[#E040FB] transition-colors duration-200">
-												<span className="text-xs sm:text-sm font-medium mr-2">Read More</span>
+												<span className="text-xs sm:text-sm font-medium mr-2">Daha Fazla</span>
 												<ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-200 group-hover:translate-x-1" />
 											</div>
 										</div>
@@ -458,7 +437,7 @@ export default function HomePage() {
 									</div>
 									<div>
 										<h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-1">E-posta Gönderin</h4>
-										<p className="text-gray-600 text-sm sm:text-base">info@corexis.com</p>
+										<p className="text-gray-600 text-sm sm:text-base">corexisoffical@gmail.com</p>
 										<p className="text-xs sm:text-sm text-gray-500">24 saat içinde yanıt vereceğiz</p>
 									</div>
 								</div>
@@ -503,6 +482,18 @@ export default function HomePage() {
 									>
 										<Linkedin className="h-5 w-5" />
 									</a>
+									<a
+										href="mailto:corexisoffical@gmail.com"
+										className="w-10 h-10 bg-gradient-corexis-primary text-white rounded-lg flex items-center justify-center hover:bg-gradient-corexis-accent transition-all duration-200"
+									>
+										<Mail className="h-5 w-5" />
+									</a>
+									<a
+										href="https://www.instagram.com/corexisoffical/"
+										className="w-10 h-10 bg-gradient-corexis-primary text-white rounded-lg flex items-center justify-center hover:bg-gradient-corexis-accent transition-all duration-200"
+									>
+										<Instagram className="h-5 w-5" />
+									</a>
 								</div>
 							</div>
 						</div>
@@ -525,7 +516,7 @@ export default function HomePage() {
 					<div className="py-12 lg:py-16">
 						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
 							{/* Company Info */}
-							<div className="col-span-1 md:col-span-2 lg:col-span-1">
+							<div className="col-span-1 md:col-span-2 lg:col-span-2">
 								<div className="mb-6">
 									<h2 className="text-2xl sm:text-3xl font-bold text-gradient-corexis font-serif mb-4">Corexis</h2>
 									<p className="text-gray-300 text-sm sm:text-base leading-relaxed">
@@ -540,10 +531,16 @@ export default function HomePage() {
 										<Linkedin className="h-5 w-5" />
 									</a>
 									<a
-										href="mailto:berkayduzgun42@gmail.com"
+										href="mailto:corexisoffical@gmail.com"
 										className="w-10 h-10 bg-white/10 hover:bg-gradient-corexis-primary text-white rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
 									>
 										<Mail className="h-5 w-5" />
+									</a>
+									<a
+										href="https://www.instagram.com/corexisoffical/"
+										className="w-10 h-10 bg-white/10 hover:bg-gradient-corexis-primary text-white rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
+									>
+										<Instagram className="h-5 w-5" />
 									</a>
 								</div>
 							</div>
@@ -570,8 +567,8 @@ export default function HomePage() {
 								</ul>
 							</div>
 
-							{/* Services */}
-							<div>
+							{/* Services - Hidden */}
+							<div className="hidden">
 								<h3 className="text-lg font-semibold text-white mb-4 font-serif">Hizmetlerimiz</h3>
 								<ul className="space-y-3">
 									<li><span className="text-gray-300 text-sm sm:text-base">Stratejik Danışmanlık</span></li>
@@ -588,7 +585,7 @@ export default function HomePage() {
 									<div className="flex items-start space-x-3">
 										<Mail className="h-5 w-5 text-[#E040FB] mt-0.5 flex-shrink-0" />
 										<div>
-											<p className="text-gray-300 text-sm sm:text-base">info@corexis.com</p>
+											<p className="text-gray-300 text-sm sm:text-base">corexisoffical@gmail.com</p>
 										</div>
 									</div>
 									
@@ -821,7 +818,7 @@ function ContactForm() {
 						</svg>
 						<p className="text-red-800 font-medium text-sm sm:text-base">Mesaj gönderilemedi.</p>
 					</div>
-					<p className="text-red-700 text-xs sm:text-sm mt-1">Lütfen tekrar deneyin veya doğrudan hello@corexis.com adresinden bize ulaşın</p>
+					<p className="text-red-700 text-xs sm:text-sm mt-1">Lütfen tekrar deneyin veya doğrudan corexisoffical@gmail.com adresinden bize ulaşın</p>
 				</div>
 			)}
 
