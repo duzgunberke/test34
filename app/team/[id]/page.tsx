@@ -171,6 +171,33 @@ const teamMembers = [
 			},
 		],
 	},
+	{
+		id: "fatma-zisan",
+		name: "Fatma Zişan Demir",
+		role: "CMO",
+		bio: "Merhaba, benim adım Fatma Zişan Demir. Öğrenmeyi, araştırmayı ve kişisel gelişimi seven, çalışkan bir öğrenciyim. Bilime olan ilgim ve azmim, özellikle tıp ve genetik alanlarında bana yardımcı oluyor. Eğitimimin yanında spor faaliyetleriyle de ilgileniyor, böylece takım çalışması ve disiplin becerilerimi geliştiriyorum. Amacım, güçlü bir akademik temel oluşturmak ve bireysel ve toplumsal değer üreten projelerde yer almak. Hırslı, çalışkan ve yeniliklere açık bir kişi olarak bulunduğum her ortamda olumlu katkı sağlamaya gayret ediyorum.",
+		email: "fatmazisandemir@gmail.com",
+		location: "Konya | Türkiye",
+		image: "/zisan.jpg",
+		fullBio:
+			"Pazarlama ve iletişim dünyası benim için her zaman keşfedilecek yeni bir alan oldu. Corexis’te CMO olarak çalışırken, strateji ve yaratıcılığı birleştirerek markaların hem dijitalde hem de gerçek hayatta güçlü bir etki bırakmasını sağlamaya odaklanıyorum. Kariyerim boyunca farklı sektörlerde deneyimler edindim; sosyal medya kampanyalarından içerik stratejisine, veri analitiğinden marka yönetimine kadar birçok alanda çalıştım. Bu süreçte öğrendiğim en değerli şey, her deneyimin yeni bir bakış açısı kazandırdığı ve her projede kendimi biraz daha geliştirdiğim oldu. Okul yıllarım da benim için hep ilham kaynağı oldu. Eğitim hayatım boyunca öğrendiklerimi pratikle birleştirerek, markaların hikayelerini etkili bir şekilde anlatmanın yollarını keşfettim. İşimde, yenilikçi fikirleri ve stratejik planlamayı birleştirerek hem markalara hem de insanlara değer katmayı hedefliyorum. Her zaman öğrenmeye açık, meraklı ve yaratıcı bir bakış açısıyla ilerliyorum; çünkü inanıyorum ki pazarlama, sadece satış değil, insanlara dokunabilmekle ilgili.",
+		experiences: [
+			{
+				company: "Corexis",
+				role: "CMO",
+				duration: "2025 Ekim - Halen",
+				description:
+					"Corexis’te CMO olarak görev almak, benim için hem büyük bir sorumluluk hem de eşsiz bir fırsat. Pazarlama stratejilerimizi sadece satış odaklı değil, aynı zamanda markamızın değerlerini ve vizyonunu yansıtan bir yol haritası olarak görüyoruz. Ekibimizle birlikte, veri odaklı kararlar alıyor, yaratıcı kampanyalar geliştiriyor ve her adımda hedef kitleyle anlamlı bağlar kurmayı amaçlıyoruz. Benim önceliğim, markamızın hem dijitalde hem de gerçek dünyada güçlü ve kalıcı bir iz bırakmasını sağlamak. Pazarlama benim için sadece bir iş değil; insanlarla bağlantı kurmanın, hikayeler paylaşmanın ve marka deneyimini unutulmaz kılmanın bir yolu. Corexis’te, bu vizyonu hayata geçirmek için her gün ilham verici bir ortamda çalışıyorum",
+			},
+			{
+				company: "Meram Fen Lisesi",
+				role: "Öğrenci",
+				duration: "2023 Eylül - Halen",
+				description:
+					"",
+			},
+		],
+	},
 ]
 
 export default function MemberProfilePage() {

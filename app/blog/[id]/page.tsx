@@ -85,10 +85,8 @@ const blogPosts: BlogPost[] = [
       
       <p>Arada kahve molalarında diğer takımlarla sohbet ettik. Onların projelerini dinledik, biz anlattık. Jüri sunumunda elimizden geleni yaptık.</p>
       
-      <p>Ve sonuç? <strong>4. olduk.</strong></p>
-      
-      <p>Aslında puan olarak 3.'lük puanını almıştık ama iki takımın 2.'liği paylaşması nedeniyle sıralama 4. olarak belirlendi. Ama size bir şey söyleyeyim: O an hiç önemli değildi. Çünkü birçok takım gelip bizi tebrik etti. Projemizi beğendiğini, faydalı olduğunu söylediler.</p>
-
+      <p>Ve sonuç? <strong>3. olduk.</strong></p>
+    
       <h2>Deneyim Ne Öğretti?</h2>
       <p><strong>Hız önemli.</strong> Fikri olabildiğince hızlı prototipe dönüştürmek, test etmek, düzeltmek. Startup dünyasının ta kendisi.</p>
       
@@ -179,10 +177,7 @@ export default function BlogPostPage() {
   }, [])
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
+    router.push(`/#${sectionId}`)
   }
 
   const handleShare = (platform: 'twitter' | 'linkedin' | 'facebook') => {
@@ -257,7 +252,7 @@ export default function BlogPostPage() {
                 {navigationItems.map((item) => (
                   <button
                     key={item.id}
-                    onClick={() => scrollToSection(item.id)}
+                    onClick={() => router.push(`/#${item.id}`)}
                     className={`px-3 py-2 text-sm font-medium transition-colors duration-200 
                       ${activeSection === item.id ? 'text-[#E040FB]' : 'text-gray-700 hover:text-[#E040FB]'}`}
                   >
