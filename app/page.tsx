@@ -31,6 +31,13 @@ const teamMembers = [
 		bio: "Merhaba, ben Zeynep İleri. Geleceği sadece izlemek değil, onu şekillendirmek istiyorum. Şehir Koleji'nde eğitimime devam eden bir öğrenci olarak yapay zeka mühendisliği hedefiyle kendimi sürekli geliştirmeye odaklanıyorum. Teknolojiye olan ilgim, beni algoritmalar, veri bilimi ve makine öğrenimi gibi alanlarda derinleşmeye yönlendirdi. Her gün yeni şeyler öğrenmeye, problem çözme becerilerimi geliştirmeye ve geleceğin teknolojilerine katkı sunacak projelerde yer almaya istekliyim. Amacım, yalnızca bir mühendis olmak değil; aynı zamanda çözüm üreten, fayda sağlayan ve ilham veren bir teknoloji profesyoneli olmak.",
 		image: "/zeynepileri.jpg",
 	},
+	{
+		id: "fatma-zisan",
+		name: "Fatma Zişan Demir",
+		role: "CMO",
+		bio: "Merhaba, benim adım Fatma Zişan Demir. Öğrenmeyi, araştırmayı ve kişisel gelişimi seven, çalışkan bir öğrenciyim. Bilime olan ilgim ve azmim, özellikle tıp ve genetik alanlarında bana yardımcı oluyor. Eğitimimin yanında spor faaliyetleriyle de ilgileniyor, böylece takım çalışması ve disiplin becerilerimi geliştiriyorum. Amacım, güçlü bir akademik temel oluşturmak ve bireysel ve toplumsal değer üreten projelerde yer almak. Hırslı, çalışkan ve yeniliklere açık bir kişi olarak bulunduğum her ortamda olumlu katkı sağlamaya gayret ediyorum.",
+		image: "/zisan.jpg",
+	},
    {
 		id: "berke-duzgun",
 		name: "Berke Düzgün",
