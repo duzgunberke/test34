@@ -22,7 +22,7 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Corexis - Empowering Collaboration",
+  title: "Corexis | Teknolojiyi Yeniden Tanımlıyor, Geleceği Şekillendiriyoruz",
   description: "Meet our dedicated team at Corexis, committed to excellence and innovation in everything we do.",
   viewport: "width=device-width, initial-scale=1",
 }
