@@ -47,6 +47,18 @@ const teamMembers = [
 	},
 ]
 
+// Sponsors data
+const sponsors = [
+	{
+		id: "aselsan",
+		name: "Kapsül Teknoloji Platformu",
+		description: "Milli Teknoloji Hamlesine katkı sunmak amacıyla Konya Büyükşehir Belediyesi tarafından kurulmuş bir teknoloji platformudur",
+		logo: "/sponsors/kapsul.png",
+		website: "https://www.kapsul.org.tr/",
+	},
+	// Add more sponsors as needed
+]
+
 // Original blog posts data kept for reference
 const originalBlogPosts = [
 	{
@@ -126,6 +138,7 @@ export default function HomePage() {
 									{ id: "about", label: "Hakkımızda" },
 									{ id: "team", label: "Ekibimiz" },
 									{ id: "updates", label: "Güncellemeler" },
+									{ id: "sponsors", label: "Sponsorlarımız" },
 									{ id: "contact", label: "İletişim" },
 								].map((item) => (
 									<button
@@ -166,6 +179,7 @@ export default function HomePage() {
 									{ id: "about", label: "Hakkımızda" },
 									{ id: "team", label: "Ekibimiz" },
 									{ id: "updates", label: "Güncellemeler" },
+									{ id: "sponsors", label: "Sponsorlarımız" },
 									{ id: "contact", label: "İletişim" },
 								].map((item) => (
 									<button
@@ -416,6 +430,44 @@ export default function HomePage() {
 				</div>
 			</section>
 
+			{/* Sponsors Section */}
+			<section id="sponsors" className="py-12 sm:py-16 lg:py-20 bg-white">
+				<div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+					<div className="text-center mb-12 sm:mb-16">
+						<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 font-serif">Sponsorlarımız</h2>
+						<p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
+							Vizyonumuzu paylaşan ve bizi destekleyen değerli iş ortaklarımız.
+						</p>
+					</div>
+
+					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+						{sponsors.map((sponsor) => (
+							<Card
+								key={sponsor.id}
+								className="group cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-2 bg-white border-0 shadow-lg"
+								onClick={() => window.open(sponsor.website, '_blank')}
+							>
+								<CardContent className="p-6 flex flex-col items-center">
+									<div className="w-48 h-48 relative mb-6">
+										<img
+											src={sponsor.logo}
+											alt={`${sponsor.name} logo`}
+											className="w-full h-full object-contain"
+										/>
+									</div>
+									<h3 className="text-xl font-semibold text-gray-900 mb-2 text-center">
+										{sponsor.name}
+									</h3>
+									<p className="text-gray-600 text-center text-sm">
+										{sponsor.description}
+									</p>
+								</CardContent>
+							</Card>
+						))}
+					</div>
+				</div>
+			</section>
+
 			{/* Contact Section */}
 			<section id="contact" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-purple-50 to-pink-50">
 				<div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -560,6 +612,7 @@ export default function HomePage() {
 										{ label: "Hakkımızda", action: () => scrollToSection("about") },
 										{ label: "Ekibimiz", action: () => scrollToSection("team") },
 										{ label: "Güncellemeler", action: () => scrollToSection("updates") },
+										{ label: "Sponsorlarımız", action: () => scrollToSection("sponsors") },
 										{ label: "İletişim", action: () => scrollToSection("contact") },
 									].map((item) => (
 										<li key={item.label}>

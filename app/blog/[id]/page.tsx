@@ -45,6 +45,7 @@ const navigationItems: NavItem[] = [
   { id: "about", label: "Hakkımızda" },
   { id: "team", label: "Ekibimiz" },
   { id: "updates", label: "Güncellemeler" },
+  { id: "sponsors", label: "Sponsorlarımız" }, // Add this line
   { id: "contact", label: "İletişim" }
 ]
 
