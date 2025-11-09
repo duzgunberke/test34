@@ -272,6 +272,15 @@ export default function MemberProfilePage() {
 		router.push(`/#${sectionId}`)
 	}
 
+	// Update navigationItems array
+	const navigationItems = [
+		{ id: "about", label: "Hakkımızda" },
+		{ id: "team", label: "Ekibimiz" },
+		{ id: "updates", label: "Güncellemeler" },
+		{ id: "sponsors", label: "Sponsorlarımız" }, // Add this line
+		{ id: "contact", label: "İletişim" }
+	]
+
 	return (
 		<div className="min-h-screen bg-white font-sans">
 			{/* Fixed Navigation - aligned with app/page.tsx nav styles and mobile behavior */}
@@ -285,12 +294,7 @@ export default function MemberProfilePage() {
 
 						<div className="hidden md:block">
 							<div className="ml-10 flex items-baseline space-x-8">
-								{[
-									{ id: "about", label: "Hakkımızda" },
-									{ id: "team", label: "Ekibimiz" },
-									{ id: "updates", label: "Güncellemeler" },
-									{ id: "contact", label: "İletişim" },
-								].map((item) => (
+								{navigationItems.map((item) => (
 									<button
 										key={item.id}
 										onClick={() => scrollToSection(item.id)}
@@ -322,12 +326,7 @@ export default function MemberProfilePage() {
 					{mobileMenuOpen && (
 						<div className="md:hidden">
 							<div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
-								{[
-									{ id: "about", label: "Hakkımızda" },
-									{ id: "team", label: "Ekibimiz" },
-									{ id: "updates", label: "Güncellemeler" },
-									{ id: "contact", label: "İletişim" },
-								].map((item) => (
+								{navigationItems.map((item) => (
 									<button
 										key={item.id}
 										onClick={() => {
