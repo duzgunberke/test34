@@ -72,6 +72,17 @@ const originalBlogPosts = [
 		readTime: "6 dk okuma",
 		category: "Teknoloji | Yarışma",
 	},
+	{
+		id: "nasaspaceappschallengeglobal",
+		title: "NASA Space Apps Corexis'in Uluslararası Başarısı",
+		excerpt:
+			"Geçtiğimiz günlerde Corexis ekibi olarak büyük bir başarıya imza attık. NASA Space Apps Challenge 2025’te geliştirdiğimiz projemiz, 300 binden fazla çalışma arasından seçilerek global adaylar arasında gösterildi. Dünyanın en büyük hackathonunda böyle bir aşamaya gelmek bizim için büyük bir gurur.",
+		coverImage: "/kapakresmiblogiki.png",
+		author: "Berkay Düzgün",
+		date: "2025-11-9",
+		readTime: "8 dk okuma",
+		category: "Teknoloji | Yarışma",
+	},
 	
 ]
 

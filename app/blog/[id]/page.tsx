@@ -142,6 +142,76 @@ const blogPosts: BlogPost[] = [
       }
     ]
   },
+  {
+    id: "nasaspaceappschallengeglobal",
+    title: "NASA Space Apps Corexis'in Uluslararası Başarısı",
+    excerpt:
+      "Geçtiğimiz günlerde Corexis ekibi olarak büyük bir başarıya imza attık. NASA Space Apps Challenge 2025'te geliştirdiğimiz projemiz, 300 binden fazla çalışma arasından seçilerek global adaylar arasında gösterildi. Dünyanın en büyük hackathonunda böyle bir aşamaya gelmek bizim için büyük bir gurur.",
+    coverImage: "/kapakresmiblogiki.png",
+    author: "Berkay Düzgün",
+    date: "2025-11-9",
+    readTime: "8 dk okuma",
+    category: "Teknoloji | Yarışma",
+    content: `
+      <h1>Global Finalistler Arasındayız: NASA Space Apps Challenge 2025</h1>
+
+      <p>Ocak ayının başında gelen e-posta, tüm ekibi ayağa kaldırdı. NASA Space Apps Challenge 2025 global finalistleri açıklandı - ve Corexis, dünya çapında bu listeye giren takımlardan biri oldu. Ekim ayında Konya Kapsül'de yaşadığımız 48 saatlik maraton, şimdi küresel bir yarışa dönüştü.</p>
+
+      <h2>Yerel Başarıdan Global Sahneye</h2>
+      <p>Konya'da 40'a yakın takım arasında 3. olmuştuk. Güzeldi, heyecan vericiydi, başarılıydık. Ama açıkcası, o gece bittiğinde içimizde bir soru vardı: "Peki ya sonrası?"</p>
+      
+      <p>Sonrası geldi. Ve nasıl geldi.</p>
+      
+      <p>LEO İş Modeli Tasarımcısı projemiz, o hafta sonundan sonra rafta kalmadı. Tam tersine, her gün üzerine kafa yorduk. Kodu iyileştirdik, kullanıcı arayüzünü geliştirdik, iş modelini daha da somutlaştırdık. Çünkü bu proje bizim için sadece bir yarışma çalışması değildi - gerçek bir vizyondu.</p>
+      
+      <p>Ve NASA bunu gördü.</p>
+
+      <h2>Dünya Çapında Bir Yarış</h2>
+      <p>NASA Space Apps Challenge, her yıl 150'den fazla ülkede, 450'den fazla şehirde düzenleniyor. Binlerce takım, on binlerce katılımcı. Ve bunların arasından seçilen global finalistler, artık sadece yerel kahramanlar değil - dünya çapında tanınan projeler.</p>
+      
+      <p>Bizim için bu ne anlama geliyor?</p>
+      
+      <p>Artık sadece Konya'da değil, dünyada ses getirdiğimiz anlamına geliyor. Uzay çöpü ve sürdürülebilirlik üzerine kurduğumuz fikrin, sadece Türkiye'de değil, küresel ölçekte değer bulduğu anlamına geliyor.</p>
+      
+      <p>Ve en önemlisi - Corexis'in vizyonunun doğru yolda olduğunu kanıtlıyor.</p>
+
+      <h2>Ne Değişti?</h2>
+      <p>Global finalist olmak, sadece bir ödül veya bir başarı hikayesi değil. Sorumluluk demek.</p>
+      
+      <p>Proje üzerinde çalışırken artık daha dikkatli düşünüyoruz. Çünkü bu sadece bizim projemiz değil - dünya çapında incelenen, değerlendirilen, belki de ilham kaynağı olan bir çalışma.</p>
+      
+      <p>Aynı zamanda büyük bir fırsat. Dünya çapında uzay teknolojileri, sürdürülebilirlik ve girişimcilik alanlarında çalışan insanlarla bağlantı kuruyoruz. Networkümüz genişledi, vizyonumuz büyüdü.</p>
+
+      <h2>Corexis'in Yolculuğu</h2>
+      <p>Bu başarı, Corexis'in kuruluş amacının bir teyidi gibi. Gerçek problemlere gerçek çözümler üretmek. Sadece kod yazmak değil, değer yaratmak. Ekip olarak büyümek, öğrenmek, gelişmek.</p>
+      
+      <p>Ekim ayında Konya Kapsül'de başlayan yolculuk, şimdi global bir yarışa dönüştü. Ama daha önemlisi - bu yolculuk bitmedi, daha yeni başlıyor.</p>
+
+      <h2>Sırada Ne Var?</h2>
+      <p>Global finalist olmak harika. Ama bizim hedefimiz daha büyük.</p>
+      
+      <p>LEO İş Modeli Tasarımcısı'nı gerçek bir ürün haline getirmek istiyoruz. Uzay ekonomisine somut bir katkı sunmak istiyoruz. Türkiye'den dünyaya uzanan bir teknoloji hikayesi yazmak istiyoruz.</p>
+      
+      <p>NASA Space Apps'in global ödül töreni yaklaşırken, biz çalışmaya devam ediyoruz. Sonuç ne olursa olsun, bu deneyim bize çok şey öğretti. Ve Corexis'in geleceği için sağlam bir temel oluşturdu.</p>
+
+      <h2>Teşekkürler (Yine)</h2>
+      <p>NASA'ya bu fırsatı sunduğu için teşekkür ediyoruz. Kapsül ekibine, Future In Space & Space Network'e destekleri için teşekkür ediyoruz. Rakip takımlara, jüriye, bizi destekleyen herkese teşekkür ediyoruz.</p>
+      
+      <p>Ve en önemlisi - bizlere inanan, takip eden, arkamızda duran herkese teşekkürler.</p>
+      
+      <p><strong>Bu sadece başlangıç. Uzay bizim için uzak değil, hedef. 🚀</strong></p>
+
+      <hr />
+
+      <p><em>Corexis ekibi olarak bu yolculukta ilerlemeye, kendimizi geliştirmeye ve geleceğin teknolojilerini üretmeye devam edeceğiz. Bizi takip etmeye devam edin!</em></p>
+    `,
+    gallery: [
+      {
+        image: "/kapakresmiblogiki.png",
+        caption: "Uluslararası Adayalar Açıklandı"
+      },
+    ]
+  },
   
 ]
 
