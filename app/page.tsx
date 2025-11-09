@@ -96,8 +96,8 @@ export default function HomePage() {
 
 	useEffect(() => {
 		const handleScroll = () => {
-			const sections = ["hero", "about", "team", "updates", "contact"]
-			const scrollPosition = window.scrollY + 100
+			const sections = ["hero", "about", "team", "updates", "sponsors", "contact"]
+			const scrollPosition = window.scrollY + window.innerHeight / 3
 
 			for (const section of sections) {
 				const element = document.getElementById(section)
@@ -112,6 +112,7 @@ export default function HomePage() {
 		}
 
 		window.addEventListener("scroll", handleScroll)
+		handleScroll() // Call once on mount to set initial active section
 		return () => window.removeEventListener("scroll", handleScroll)
 	}, [])
 
