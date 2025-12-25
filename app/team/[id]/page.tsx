@@ -19,7 +19,7 @@ const teamMembers = [
 		bio: "Merhaba, ben Berkay. ASELSAN Konya’da Elektrik-Elektronik öğrencisiyim. Aynı zamanda Corexis grubunun kurucusu ve Deneyap öğrencisiyim. Bugüne kadar birçok Deneyap şenliğinde takım kaptanı olarak yer aldım ve yönettiğim ekiplerle çeşitli dereceler elde ettim. Bunun yanı sıra, Teknofest’te yazılım ve farklı teknolojik alanlarda defalarca yarışmalara katıldım. Elektrik-elektronik, yazılım geliştirme ve yenilikçi teknolojiler üzerine çalışıyor; özellikle sensör sistemleri, gömülü yazılımlar ve otomasyon odaklı projeler geliştiriyorum. Takım çalışmasına uyumlu, araştırmaya meraklı ve problem çözme odaklı biriyim. Hedefim; teknoloji ve mühendisliği birleştirerek, hem akademik hem de profesyonel hayatta yenilikçi çözümler üreten bir mühendis olmak.",
 		email: "berkayduzgun42@gmail.com",
 		location: "Konya | Türkiye",
-		image: "/berkay.jpg",
+		image: "/berkayy.jpeg",
 		fullBio:
 			"Merhaba, ben Berkay. ASELSAN Konya’da Elektrik-Elektronik öğrencisiyim. Aynı zamanda Corexis grubunun kurucusu ve Deneyap öğrencisiyim. Bugüne kadar birçok Deneyap şenliğinde takım kaptanı olarak yer aldım ve yönettiğim ekiplerle çeşitli dereceler elde ettim. Bunun yanı sıra, Teknofest’te yazılım ve farklı teknolojik alanlarda defalarca yarışmalara katıldım. Elektrik-elektronik, yazılım geliştirme ve yenilikçi teknolojiler üzerine çalışıyor; özellikle sensör sistemleri, gömülü yazılımlar ve otomasyon odaklı projeler geliştiriyorum. Takım çalışmasına uyumlu, araştırmaya meraklı ve problem çözme odaklı biriyim. Hedefim; teknoloji ve mühendisliği birleştirerek, hem akademik hem de profesyonel hayatta yenilikçi çözümler üreten bir mühendis olmak.",
 		experiences: [
@@ -287,9 +287,13 @@ export default function MemberProfilePage() {
 			<nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="flex items-center justify-between h-16">
-						<div className="flex-shrink-0">
-							{/* Use same logo style as main page */}
-							<h1 className="text-xl sm:text-2xl font-bold text-gradient-corexis font-serif cursor-pointer" onClick={() => router.push("/")}>Corexis</h1> 
+						<div className="flex-shrink-0 flex items-center gap-2 sm:gap-3">
+							<img 
+								src="/corexislogopng.png" 
+								alt="Corexis Logo" 
+								className="h-8 w-8 sm:h-10 sm:w-10"
+							/>
+							<h1 className="text-xl sm:text-2xl font-bold text-gradient-corexis font-serif cursor-pointer" onClick={() => router.push("/")}>Corexis</h1>
 						</div>
 
 						<div className="hidden md:block">
