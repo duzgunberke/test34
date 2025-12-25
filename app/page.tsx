@@ -15,7 +15,7 @@ const teamMembers = [
 		name: "Berkay Düzgün",
 		role: "CEO",
 		bio: "Merhaba, ben Berkay. ASELSAN Konya’da Elektrik-Elektronik öğrencisiyim. Aynı zamanda Corexis grubunun kurucusu ve Deneyap öğrencisiyim. Bugüne kadar birçok Deneyap şenliğinde takım kaptanı olarak yer aldım ve yönettiğim ekiplerle çeşitli dereceler elde ettim. Bunun yanı sıra, Teknofest’te yazılım ve farklı teknolojik alanlarda defalarca yarışmalara katıldım. Elektrik-elektronik, yazılım geliştirme ve yenilikçi teknolojiler üzerine çalışıyor; özellikle sensör sistemleri, gömülü yazılımlar ve otomasyon odaklı projeler geliştiriyorum. Takım çalışmasına uyumlu, araştırmaya meraklı ve problem çözme odaklı biriyim. Hedefim; teknoloji ve mühendisliği birleştirerek, hem akademik hem de profesyonel hayatta yenilikçi çözümler üreten bir mühendis olmak.",
-		image: "/berkay.jpg",
+		image: "/berkayy.jpeg",
 	},
   	{
 		id: "erva-evin-iltus",
@@ -38,6 +38,13 @@ const teamMembers = [
 		bio: "Merhaba, benim adım Fatma Zişan Demir. Öğrenmeyi, araştırmayı ve kişisel gelişimi seven, çalışkan bir öğrenciyim. Bilime olan ilgim ve azmim, özellikle tıp ve genetik alanlarında bana yardımcı oluyor. Eğitimimin yanında spor faaliyetleriyle de ilgileniyor, böylece takım çalışması ve disiplin becerilerimi geliştiriyorum. Amacım, güçlü bir akademik temel oluşturmak ve bireysel ve toplumsal değer üreten projelerde yer almak. Hırslı, çalışkan ve yeniliklere açık bir kişi olarak bulunduğum her ortamda olumlu katkı sağlamaya gayret ediyorum.",
 		image: "/zisan.jpg",
 	},
+	{
+		id: "yusuf-enes",
+		name: "Yusuf Enes Taş",
+		role: "CPO",
+		bio: "Merhaba, ben Yusuf Enes Taş. Meram Fen Lisesi öğrencisiyim. Aynı zamanda Deneyap ve BİLSEM programlarında eğitim alıyor, Corexis grubunun aktif bir üyesi olarak çalışmalarımı sürdürüyorum. Okulumda tiyatro kulübüyle birlikte çeşitli etkinlikler ve organizasyonlarda yer aldım; ekip çalışması, sorumluluk alma ve üretme kültürünü bu süreçte yakından deneyimleme fırsatı buldum. Gelecekte Makine Mühendisliği alanında eğitim alarak, mühendislik ve teknoloji odaklı projelerle ülkeme ve milletime katkı sağlamayı hedefliyorum. Sürekli öğrenmeye açık, kendini geliştirmeyi önemseyen ve ürettiği değeri topluma yansıtmayı amaçlayan bir öğrenciyim.",
+		image: "/yusuf.jpeg",
+	},
    {
 		id: "berke-duzgun",
 		name: "Berke Düzgün",
@@ -50,11 +57,18 @@ const teamMembers = [
 // Sponsors data
 const sponsors = [
 	{
-		id: "aselsan",
+		id: "kapsul",
 		name: "Kapsül Teknoloji Platformu",
 		description: "Milli Teknoloji Hamlesine katkı sunmak amacıyla Konya Büyükşehir Belediyesi tarafından kurulmuş bir teknoloji platformudur",
 		logo: "/sponsors/kapsul.png",
 		website: "https://www.kapsul.org.tr/",
+	},
+	{
+		id: "sehirkoleji",
+		name: "Şehir Koleji",
+		description: "Konyada faaliyet gösteren köklü bir eğitim kurumudur. Başarı Bu Şehrin Anahtarıdır.",
+		logo: "/sponsors/sehirklj.png",
+		website: "https://www.konyasehirkoleji.com/",
 	},
 	// Add more sponsors as needed
 ]
@@ -139,7 +153,12 @@ export default function HomePage() {
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="flex items-center justify-between h-16">
 						{/* Logo */}
-						<div className="flex-shrink-0">
+						<div className="flex-shrink-0 flex items-center gap-2 sm:gap-3">
+							<img 
+								src="/corexislogopng.png" 
+								alt="Corexis Logo" 
+								className="h-8 w-8 sm:h-10 sm:w-10"
+							/>
 							<h1 className="text-xl sm:text-2xl font-bold text-gradient-corexis font-serif">Corexis</h1>
 						</div>
 
@@ -460,7 +479,7 @@ export default function HomePage() {
 								onClick={() => window.open(sponsor.website, '_blank')}
 							>
 								<CardContent className="p-6 flex flex-col items-center">
-									<div className="w-48 h-48 relative mb-6">
+									<div className="w-48 h-48 relative mb-6 rounded-lg overflow-hidden">
 										<img
 											src={sponsor.logo}
 											alt={`${sponsor.name} logo`}
